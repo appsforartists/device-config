@@ -1,7 +1,10 @@
 #!/bin/bash
 
 # natural scrolling
-xmodmap -e "pointer = 1 2 3 5 4"
+synclient VertTwoFingerScroll=1
+synclient HorizTwoFingerScroll=1
+synclient HorizScrollDelta=-49
+synclient VertScrollDelta=-49
 
 # run a window manager
 openbox-session
