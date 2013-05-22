@@ -2,6 +2,8 @@
 
 TODO:
 
+ - Figure out how to use keychain to persist ssh-adds across sessions to prevent Sublime from hanging on git push
+
  - Remove everything I didn't change in Soda Dark.sublime-theme.  Most retina Sublime themes seem to be based on Soda, so hopefully I can create a scaffold that will teach Sublime where to find Retina assets for any Sublime theme.
  
  - Test the .sh scripts
