@@ -23,7 +23,9 @@ apt-get install dbus-x11
 apt-get install openbox
 apt-get install lxappearance
 
+# install git
 apt-get install git
+apt-get install keychain
 
 # pick a theme that matches sublime
 add-apt-repository ppa:webupd8team/themes
