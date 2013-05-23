@@ -180,7 +180,7 @@
     <chainQuitKey>C-g</chainQuitKey>
     <keybind key="A-space">
       <action name="Execute">
-        <command>x-terminal-emulator</command>
+        <command>gmrun</command>
       </action>
     </keybind>
     <keybind key="F4">

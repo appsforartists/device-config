@@ -23,6 +23,7 @@ apt-get install dbus-x11
 apt-get install openbox
 apt-get install lxappearance
 apt-get install python-xdg
+apt-get install gmrun
 
 # install git
 apt-get install git
