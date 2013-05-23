@@ -9,28 +9,17 @@
         "class": "tabset_control",
         "layer0.texture": "Theme - Soda/Soda Dark/tabset-background@2x.png",
         "layer0.inner_margin": [2, 14],
-        "layer0.opacity": 1.0,
         "content_margin": [-8, 0, -8, 6],
         "tab_overlap": 10,
-        "tab_width": 180,
         "tab_min_width": 90,
-        "tab_height": 50,
-        "mouse_wheel_switch": false
-    },
-    {
-        "class": "tabset_control",
-        "settings": ["mouse_wheel_switches_tabs"],
-        "mouse_wheel_switch": true
+        "tab_height": 50
     },
     // Tab element
     {
         "class": "tab_control",
         "content_margin": [14, 6, 14, 6],
-        "max_margin_trim": 0,
-        "hit_test_level": 0.0,
         "layer0.texture": "Theme - Soda/Soda Dark/tab-inactive@2x.png",
-        "layer0.inner_margin": [10,  10],
-        "layer0.opacity": 1.0
+        "layer0.inner_margin": [10,  10]
     },
     // Tab close state
     {
@@ -115,9 +104,7 @@
     {
         "class": "tab_close_button",
         "content_margin": [16, 16],
-        "layer0.texture": "Theme - Soda/Soda Dark/tab-close-inactive@2x.png",
-        "layer0.opacity": 1.0,
-        "layer0.inner_margin": 0
+        "layer0.texture": "Theme - Soda/Soda Dark/tab-close-inactive@2x.png"
     },
     {
         "class": "tab_close_button",
@@ -127,14 +114,12 @@
     {
         "class": "tab_close_button",
         "parents": [{"class": "tab_control", "attributes": ["hover"]}],
-        "layer0.texture": "Theme - Soda/Soda Dark/tab-close@2x.png",
-        "layer0.opacity": 1.0
+        "layer0.texture": "Theme - Soda/Soda Dark/tab-close@2x.png"
     },
     {
         "class": "tab_close_button",
         "parents": [{"class": "tab_control", "attributes": ["selected"]}],
-        "layer0.texture": "Theme - Soda/Soda Dark/tab-close@2x.png",
-        "layer0.opacity": 1.0
+        "layer0.texture": "Theme - Soda/Soda Dark/tab-close@2x.png"
     },
     // Tab dirty button
     {
@@ -150,8 +135,7 @@
     },
     {
         "class": "tab_close_button",
-        "parents": [{"class": "tab_control", "attributes": ["dirty", "hover"]}],
-        "layer0.opacity": 1.0
+        "parents": [{"class": "tab_control", "attributes": ["dirty", "hover"]}]
     },
     {
         "class": "tab_close_button",
@@ -193,22 +177,7 @@
     {
         "class": "tab_label",
         "font.size": 14.0,
-        "fade": true,
-        "fg": [170, 170, 170],
-        "shadow_color": [25, 25, 25],
         "shadow_offset": [0, -2]
-    },
-    {
-        "class": "tab_label",
-        "parents": [{"class": "tab_control", "attributes": ["hover"]}],
-        "fg": [200, 200, 200],
-        "shadow_color": [30, 30, 30]
-    },
-    {
-        "class": "tab_label",
-        "parents": [{"class": "tab_control", "attributes": ["selected"]}],
-        "fg": [230, 230, 230],
-        "shadow_color": [35, 35, 35]
     },
 
 //
@@ -218,7 +187,6 @@
     {
         "class": "fold_button_control",
         "layer0.texture": "Theme - Soda/Soda Dark/fold-closed@2x.png",
-        "layer0.opacity": 1.0,
         "layer0.inner_margin": 0,
         "content_margin": [16, 16]
     },
@@ -246,33 +214,27 @@
     {
         "class": "scroll_bar_control",
         "layer0.texture": "Theme - Soda/Soda Dark/standard-scrollbar-vertical@2x.png",
-        "layer0.opacity": 1.0,
-        "layer0.inner_margin": [4, 12],
-        "blur": false
+        "layer0.inner_margin": [4, 12]
     },
     // Standard horizontal scroll bar
     {
         "class": "scroll_bar_control",
         "attributes": ["horizontal"],
         "layer0.texture": "Theme - Soda/Soda Dark/standard-scrollbar-horizontal@2x.png",
-        "layer0.inner_margin": [12, 4],
-        "blur": false
+        "layer0.inner_margin": [12, 4]
     },
     // Standard scroll bar corner
     {
         "class": "scroll_corner_control",
         "layer0.texture": "Theme - Soda/Soda Dark/standard-scrollbar-corner@2x.png",
-        "layer0.inner_margin": [4, 4],
-        "layer0.opacity": 1.0
+        "layer0.inner_margin": [4, 4]
     },
     // Standard vertical scroll puck
     {
         "class": "puck_control",
         "layer0.texture": "Theme - Soda/Soda Dark/standard-puck-vertical@2x.png",
-        "layer0.opacity": 1.0,
         "layer0.inner_margin": [0, 20],
-        "content_margin": [16, 24],
-        "blur": false
+        "content_margin": [16, 24]
     },
     // Standard horizontal scroll puck
     {
@@ -287,25 +249,12 @@
 //
 // OVERLAY SCROLLBARS
 //
-
-    // Overlay toggle scroll bar
-    {
-        "class": "scroll_area_control",
-        "settings": ["overlay_scroll_bars"],
-        "overlay": true
-    },
-    {
-        "class": "scroll_area_control",
-        "settings": ["!overlay_scroll_bars"],
-        "overlay": false
-    },
     // Overlay vertical scroll bar
     {
         "class": "scroll_bar_control",
         "settings": ["overlay_scroll_bars"],
         "layer0.texture": "Theme - Soda/Soda Dark/overlay-scrollbar-vertical@2x.png",
-        "layer0.inner_margin": [0, 10],
-        "blur": true
+        "layer0.inner_margin": [0, 10]
     },
     // Overlay horizontal scroll bar
     {
@@ -313,8 +262,7 @@
         "settings": ["overlay_scroll_bars"],
         "attributes": ["horizontal"],
         "layer0.texture": "Theme - Soda/Soda Dark/overlay-scrollbar-horizontal@2x.png",
-        "layer0.inner_margin": [10, 0],
-        "blur": true
+        "layer0.inner_margin": [10, 0]
     },
     // Overlay vertical puck
     {
@@ -322,8 +270,7 @@
         "settings": ["overlay_scroll_bars"],
         "layer0.texture": "Theme - Soda/Soda Dark/overlay-puck-vertical@2x.png",
         "layer0.inner_margin": [0, 10],
-        "content_margin": [10, 40],
-        "blur": true
+        "content_margin": [10, 40]
     },
     // Overlay horizontal puck
     {
@@ -332,8 +279,7 @@
         "attributes": ["horizontal"],
         "layer0.texture": "Theme - Soda/Soda Dark/overlay-puck-horizontal@2x.png",
         "layer0.inner_margin": [10, 0],
-        "content_margin": [40, 10],
-        "blur": true
+        "content_margin": [40, 10]
     },
     // Overlay light puck (for dark content)
     {
@@ -351,32 +297,12 @@
     },
 
 //
-// EMPTY WINDOW BACKGROUND
-//
-
-    {
-        "class": "sheet_container_control",
-        "layer0.tint": [25, 25, 25],
-        "layer0.opacity": 1.0
-    },
-
-//
 // GRID LAYOUT
 //
 
     {
         "class": "grid_layout_control",
-        "border_size": 2,
-        "border_color": [70, 70, 70]
-    },
-
-//
-// MINI MAP
-//
-
-    {
-        "class": "minimap_control",
-        "viewport_color": [255, 255, 255, 35]
+        "border_size": 2
     },
 
 //
@@ -385,21 +311,18 @@
     // General labels
     {
         "class": "label_control",
-        "color": [204, 204, 204],
         "font.size": 21
     },
     // Text field labels
     {
         "class": "label_control",
         "parents": [{"class": "panel_control"}],
-        "shadow_color": [50, 50, 50],
         "shadow_offset": [0, -2]
     },
     // Button labels
     {
         "class": "label_control",
         "parents": [{"class": "button_control"}],
-        "shadow_color": [55, 55, 55],
         "shadow_offset": [0, -2]
     },
 
@@ -412,13 +335,7 @@
         "class": "tool_tip_control",
         "layer0.texture": "Theme - Soda/Soda Dark/tooltip@2x.png",
         "layer0.inner_margin": [2, 2],
-        "layer0.opacity": 0.95,
         "content_margin": [6, 6]
-    },
-    // Tooltip content
-    {
-        "class": "tool_tip_label_control",
-        "color": [0, 0, 0]
     },
 
 //
@@ -429,7 +346,6 @@
     {
         "class": "status_bar",
         "layer0.texture": "Theme - Soda/Soda Dark/status-bar-background@2x.png",
-        "layer0.opacity": 1.0,
         "layer0.inner_margin": [4, 4],
         "content_margin": [16, 8, 16, 8]
     },
@@ -442,8 +358,6 @@
     {
         "class": "label_control",
         "parents": [{"class": "status_bar"}],
-        "color": [150, 150, 150],
-        "shadow_color": [25, 25, 25],
         "shadow_offset": [0, -2]
     },
 
@@ -455,7 +369,6 @@
     {
         "class": "sidebar_container",
         "layer0.texture": "Theme - Soda/Soda Dark/sidebar-bg@2x.png",
-        "layer0.opacity": 1.0,
         "layer0.inner_margin": [2, 2, 4, 2],
         "content_margin": [0, 0, 2, 0]
     },
@@ -464,30 +377,18 @@
         "class": "sidebar_tree",
         "row_padding": [16, 9],
         "indent": 30,
-        "indent_offset": 30,
-        "indent_top_level": false,
-        "dark_content": true
+        "indent_offset": 30
     },
     // Sidebar rows
     {
         "class": "tree_row",
         "layer0.texture": "Theme - Soda/Soda Dark/sidebar-row-selected@2x.png",
-        "layer0.opacity": 0.0,
         "layer0.inner_margin": [2, 2]
-    },
-    // Sidebar row selected
-    {
-        "class": "tree_row",
-        "attributes": ["selected"],
-        "layer0.opacity": 1.0
     },
     // Sidebar heading
     {
         "class": "sidebar_heading",
         "font.size": 18,
-        "color": [210, 210, 210],
-        "font.bold": true,
-        "shadow_color": [0, 0, 0],
         "shadow_offset": [0, -2]
     },
     // Sidebar heading selected
@@ -500,33 +401,12 @@
     {
         "class": "sidebar_label",
         "font.size": 20,
-        "color": [125, 125, 125],
-        "shadow_color": [0, 0, 0],
         "shadow_offset": [0, -2]
-    },
-    // Sidebar folder entry
-    {
-        "class": "sidebar_label",
-        "parents": [{"class": "tree_row", "attributes": ["expandable"]}],
-        "color": [190, 190, 190]
-    },
-    {
-        "class": "sidebar_label",
-        "parents": [{"class": "tree_row", "attributes": ["expandable", "hover"]}],
-        "color": [235, 235, 235]
-    },
-    {
-        "class": "sidebar_label",
-        "parents": [{"class": "tree_row", "attributes": ["expandable"]}],
-        "settings": ["bold_folder_labels"],
-        "font.bold": true
     },
     // Sidebar entry selected
     {
         "class": "sidebar_label",
         "parents": [{"class": "tree_row", "attributes": ["selected"]}],
-        "color": [210, 210, 210],
-        "shadow_color": [0, 0, 0],
         "shadow_offset": [0, 2]
     },
 
@@ -538,21 +418,13 @@
     {
         "class": "close_button",
         "layer0.texture": "Theme - Soda/Soda Dark/file-close@2x.png",
-        "layer0.opacity": 0.0,
-        "layer0.inner_margin": 0,
         "content_margin": [16, 16]
-    },
-    {
-        "class": "close_button",
-        "parents": [{"class": "tree_row", "attributes": ["hover"]}],
-        "layer0.opacity": 1.0
     },
     // Sidebar file dirty
     {
         "class": "close_button",
         "attributes": ["dirty"],
-        "layer0.texture": "Theme - Soda/Soda Dark/file-dirty@2x.png",
-        "layer0.opacity": 1.0
+        "layer0.texture": "Theme - Soda/Soda Dark/file-dirty@2x.png"
     },
     {
         "class": "close_button",
@@ -586,9 +458,7 @@
     {
         "class": "disclosure_button_control",
         "content_margin": [16, 16],
-        "layer0.texture": "Theme - Soda/Soda Dark/group-closed@2x.png",
-        "layer0.opacity": 1.0,
-        "layer0.inner_margin": 0
+        "layer0.texture": "Theme - Soda/Soda Dark/group-closed@2x.png"
     },
     {
         "class": "disclosure_button_control",
@@ -666,9 +536,7 @@
     {
         "class": "button_control",
         "content_margin": [30, 12],
-        "min_size": [75, 0],
         "layer0.texture": "Theme - Soda/Soda Dark/btn-large@2x.png",
-        "layer0.opacity": 1.0,
         "layer0.inner_margin": [12, 12]
     },
     // Pressed button state
@@ -686,7 +554,6 @@
     {
         "class": "text_line_control",
         "layer0.texture": "Theme - Soda/Soda Dark/text-field@2x.png",
-        "layer0.opacity": 1.0,
         "layer0.inner_margin": [8, 10, 8, 6],
         "content_margin": [6, 6]
     },
@@ -700,27 +567,12 @@
         "class": "panel_control",
         "layer0.texture": "Theme - Soda/Soda Dark/panel-background@2x.png",
         "layer0.inner_margin": [4, 4, 4, 4],
-        "layer0.opacity": 1.0,
         "content_margin": [4, 6, 4, 2]
-    },
-    // Quick panel background
-    {
-        "class": "overlay_control",
-        "settings": ["!soda_retina_fix"],
-        "layer0.texture": "Theme - Soda/Soda Dark/quick-panel-background@2x.png",
-        "layer0.inner_margin": [12, 6, 12, 15],
-        "layer0.opacity": 1.0,
-        "layer1.texture": "Theme - Soda/Soda Dark/quick-panel-sections@2x.png",
-        "layer1.inner_margin": [12, 40, 12, 19],
-        "layer1.opacity": 1.0,
-        "content_margin": [11, 8, 11, 17]
     },
     // Quick panel background (Retina fix)
     {
         "class": "overlay_control",
-        "settings": ["soda_retina_fix"],
         "layer0.tint": [67, 67, 67],
-        "layer0.opacity": 1.0,
         "content_margin": [12, 16, 12, 12]
     },
 
@@ -730,40 +582,17 @@
 
     {
         "class": "quick_panel",
-        "row_padding": [10, 10],
-        "layer0.tint": [33, 33, 33],
-        "layer0.opacity": 1.0,
-        "dark_content": true
+        "row_padding": [10, 10]
     },
     {
         "class": "quick_panel_row",
         "layer0.texture": "Theme - Soda/Soda Dark/quick-panel-row@2x.png",
-        "layer0.inner_margin": [4, 4, 4, 4],
-        "layer0.opacity": 1.0
+        "layer0.inner_margin": [4, 4, 4, 4]
     },
     {
         "class": "quick_panel_row",
         "attributes": ["selected"],
         "layer0.texture": "Theme - Soda/Soda Dark/quick-panel-row-selected@2x.png"
-    },
-    {
-        "class": "quick_panel_label",
-        "fg": [210, 210, 210, 255],
-        "match_fg": [126, 199, 239, 255],
-        "selected_fg": [255, 255, 255, 255],
-        "selected_match_fg": [166, 229, 255, 255]
-    },
-    {
-        "class": "quick_panel_path_label",
-        "fg": [130, 130, 130, 255],
-        "match_fg": [220, 220, 220, 255],
-        "selected_fg": [175, 175, 175, 255],
-        "selected_match_fg": [220, 220, 220, 255]
-    },
-    {
-        "class": "quick_panel_score_label",
-        "fg": [126, 199, 239, 255],
-        "selected_fg": [166, 229, 255, 255]
     },
 
 //
@@ -773,8 +602,7 @@
     {
         "class": "mini_quick_panel_row",
         "layer0.texture": "Theme - Soda/Soda Dark/quick-panel-row@2x.png",
-        "layer0.inner_margin": [4, 4, 4, 4],
-        "layer0.opacity": 1.0
+        "layer0.inner_margin": [4, 4, 4, 4]
     },
     {
         "class": "mini_quick_panel_row",
@@ -788,31 +616,16 @@
 
     {
         "class": "popup_control",
-        "content_margin": [4, 4],
-        "layer0.tint": [30, 30, 30],
-        "layer0.opacity": 1.0
+        "content_margin": [4, 4]
     },
     {
         "class": "auto_complete",
         "row_padding": [8, 4]
     },
     {
-        "class": "auto_complete_label",
-        "fg": [140, 140, 140],
-        "match_fg": [220, 220, 220],
-        "selected_fg": [180, 180, 180],
-        "selected_match_fg": [245, 245, 245]
-    },
-    {
         "class": "table_row",
         "layer0.texture": "Theme - Soda/Soda Dark/autocomplete-row-selected@2x.png",
-        "layer0.opacity": 0.0,
         "layer0.inner_margin": [6, 2]
-    },
-    {
-        "class": "table_row",
-        "attributes": ["selected"],
-        "layer0.opacity": 1.0
     },
 
 //
@@ -824,7 +637,6 @@
         "class": "icon_button_control",
         "layer0.texture": "Theme - Soda/Soda Dark/btn-group-middle@2x.png",
         "layer0.inner_margin": [12, 12],
-        "layer0.opacity": 1.0,
         "content_margin": [6, 6]
     },
     {
@@ -877,7 +689,6 @@
     {
         "class": "icon_regex",
         "layer0.texture": "Theme - Soda/Soda Dark/icon-regex-off@2x.png",
-        "layer0.opacity": 1.0,
         "content_margin": [18, 18]
     },
     {
@@ -889,7 +700,6 @@
     {
         "class": "icon_case",
         "layer0.texture": "Theme - Soda/Soda Dark/icon-case-off@2x.png",
-        "layer0.opacity": 1.0,
         "content_margin": [18, 18]
     },
     {
@@ -901,7 +711,6 @@
     {
         "class": "icon_whole_word",
         "layer0.texture": "Theme - Soda/Soda Dark/icon-word-off@2x.png",
-        "layer0.opacity": 1.0,
         "content_margin": [18, 18]
     },
     {
@@ -918,7 +727,6 @@
     {
         "class": "icon_context",
         "layer0.texture": "Theme - Soda/Soda Dark/icon-context-off@2x.png",
-        "layer0.opacity": 1.0,
         "content_margin": [18, 18]
     },
     {
@@ -930,7 +738,6 @@
     {
         "class": "icon_use_buffer",
         "layer0.texture": "Theme - Soda/Soda Dark/icon-buffer-off@2x.png",
-        "layer0.opacity": 1.0,
         "content_margin": [18, 18]
     },
     {
@@ -947,7 +754,6 @@
     {
         "class": "icon_reverse",
         "layer0.texture": "Theme - Soda/Soda Dark/icon-reverse-off@2x.png",
-        "layer0.opacity": 1.0,
         "content_margin": [18, 18]
     },
     {
@@ -959,7 +765,6 @@
     {
         "class": "icon_wrap",
         "layer0.texture": "Theme - Soda/Soda Dark/icon-wrap-off@2x.png",
-        "layer0.opacity": 1.0,
         "content_margin": [18, 18]
     },
     {
@@ -971,7 +776,6 @@
     {
         "class": "icon_in_selection",
         "layer0.texture": "Theme - Soda/Soda Dark/icon-selection-off@2x.png",
-        "layer0.opacity": 1.0,
         "content_margin": [18, 18]
     },
     {
@@ -988,7 +792,6 @@
     {
         "class": "icon_preserve_case",
         "layer0.texture": "Theme - Soda/Soda Dark/icon-preserve-off@2x.png",
-        "layer0.opacity": 1.0,
         "content_margin": [18, 18]
     },
     {
@@ -1005,7 +808,6 @@
     {
         "class": "icon_highlight",
         "layer0.texture": "Theme - Soda/Soda Dark/icon-highlight-off@2x.png",
-        "layer0.opacity": 1.0,
         "content_margin": [18, 18]
     },
     {
