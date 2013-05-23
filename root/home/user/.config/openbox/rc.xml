@@ -187,20 +187,26 @@
       <action name="ToggleMaximize"/>
     </keybind>
     <keybind key="F5">
-      <action name="NextWindow">
+      <action name="NextWindow"/>
+    </keybind>
+    <keybind key="F6">
+      <action name="Execute">
+        <command>brightness down</command>
+      </action>
+    </keybind>
+    <keybind key="F7">
+      <action name="Execute">
+        <command>brightness up</command>
       </action>
     </keybind>
     <keybind key="A-Tab">
-      <action name="NextWindow">
-      </action>
+      <action name="NextWindow"/>
     </keybind>
     <keybind key="A-S-Tab">
-      <action name="PreviousWindow">
-      </action>
+      <action name="PreviousWindow"/>
     </keybind>
     <keybind key="XF86PowerOff">
-      <action name="SessionLogOut">
-      </action>
+      <action name="SessionLogOut"/>
     </keybind>
   </keyboard>
   <mouse>
