@@ -180,37 +180,26 @@
     <chainQuitKey>C-g</chainQuitKey>
     <keybind key="A-space">
       <action name="Execute">
-        <menu>xterm</menu>
+        <command>x-terminal-emulator</command>
       </action>
     </keybind>
-    <!-- Keybindings for window switching -->
+    <keybind key="F4">
+      <action name="ToggleMaximize"/>
+    </keybind>
+    <keybind key="F5">
+      <action name="NextWindow">
+      </action>
+    </keybind>
     <keybind key="A-Tab">
       <action name="NextWindow">
-        <finalactions>
-          <action name="Focus"/>
-          <action name="Raise"/>
-          <action name="Unshade"/>
-        </finalactions>
       </action>
     </keybind>
     <keybind key="A-S-Tab">
       <action name="PreviousWindow">
-        <finalactions>
-          <action name="Focus"/>
-          <action name="Raise"/>
-          <action name="Unshade"/>
-        </finalactions>
       </action>
     </keybind>
-    <keybind key="C-A-Tab">
-      <action name="NextWindow">
-        <panels>yes</panels>
-        <desktop>yes</desktop>
-        <finalactions>
-          <action name="Focus"/>
-          <action name="Raise"/>
-          <action name="Unshade"/>
-        </finalactions>
+    <keybind key="XF86PowerOff">
+      <action name="SessionLogOut">
       </action>
     </keybind>
   </keyboard>
