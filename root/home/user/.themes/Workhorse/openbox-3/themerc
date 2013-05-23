@@ -1,0 +1,136 @@
+# Fonts
+# these are really halos, but who cares?
+
+*.font: shadow=n
+window.active.label.text.font:shadow=y:shadowtint=30:shadowoffset=1
+window.inactive.label.text.font:shadow=y:shadowtint=00:shadowoffset=0
+menu.items.font:shadow=y:shadowtint=0:shadowoffset=1
+
+!# general stuff
+
+border.width: 3
+padding.width: 3
+padding.height: 3
+window.handle.width: 0
+window.client.padding.width: 0
+menu.overlap: 2
+*.justify: center
+
+!# lets set our damn shadows here, eh?
+
+#*.bg.highlight: 50
+#*.bg.shadow:    05
+
+
+
+!# Menu settings
+
+menu.border.color: #aaaaaa
+menu.border.width: 1
+
+menu.title.bg: solid flat
+menu.title.bg.color: #E6E7E6
+menu.title.text.color: #111111
+
+menu.items.bg: Flat Solid
+menu.items.bg.color: #ffffff
+menu.items.text.color: #111111
+menu.items.disabled.text.color: #aaaaaa
+
+menu.items.active.bg: Flat Solid
+
+menu.items.active.bg.color: #303030
+menu.items.active.text.color: #ffffff
+
+menu.separator.width: 1
+menu.separator.padding.width: 0
+menu.separator.padding.height: 3
+menu.separator.color: #aaaaaa
+
+!# set handles here and only the once?
+
+window.*.handle.bg: Raised solid
+window.*.handle.bg.color: #eaebec
+
+window.*.grip.bg: Raised solid
+window.*.grip.bg.color: #eaebec
+
+!# Active
+
+window.*.border.color: #2a2a2a
+
+window.active.title.separator.color: #2a2a2a
+
+*.title.bg: flat 
+*.title.bg.color: #2a2a2a
+
+window.active.label.bg: Parentrelative
+window.active.label.text.color: #ffffff
+
+window.active.button.*.bg: Flat
+
+window.active.button.*.bg.color: #2a2a2a
+window.active.button.*.bg.colorTo: #585855
+
+window.active.button.*.bg.border.color: #1d1e1b
+window.active.button.*.image.color: #d0d0d0
+
+window.active.button.hover.bg.color: #2a2a2a
+window.active.button.hover.image.color: #ffffff
+
+window.active.button.pressed.bg: Flat solid
+window.active.button.pressed.bg.color: #2a2a2a
+
+window.active.button.hover.bg.border.color: #1d1e1b
+
+!# inactive
+
+!#window.inactive.border.color: #7e8285
+window.inactive.title.separator.color: #2a2a2a
+
+window.inactive.title.bg: Flat 
+window.inactive.title.bg.color: #2a2a2a
+window.inactive.title.bg.color.splitTo: #2a2a2a
+window.inactive.title.bg.colorTo: #2a2a2a
+window.inactive.title.bg.colorTo.splitTo: #2a2a2a
+
+window.inactive.label.bg: Parentrelative
+window.inactive.label.text.color: #74746e
+
+window.inactive.button.*.bg: Flat 
+window.inactive.button.*.bg.color: #2a2a2a
+window.inactive.button.*.bg.color.splitto: #000000
+window.inactive.button.*.bg.colorTo: #2a2a2a
+window.inactive.button.*.bg.colorTo.splitto: #000000
+window.inactive.button.*.bg.border.color: #1d1e1b
+window.inactive.button.*.image.color: #74746e
+
+
+!# osd (pop ups and what not, dock?)
+
+osd.border.width: 1
+osd.border.color:  #aaaaaa
+
+osd.bg: flat 
+osd.bg.color: #F0EFEE
+osd.bg.color.splitto: #f5f5f4
+osd.bg.colorTo: #EAEBEC
+osd.bg.colorTo.splitto: #E7E5E4
+
+osd.bg.border.color: #ffffff
+
+osd.active.label.bg: parentrelative
+osd.active.label.bg.color: #efefef
+osd.active.label.bg.border.color: #9c9e9c
+osd.active.label.text.color: #444
+
+osd.inactive.label.bg: parentrelative
+osd.inactive.label.text.color: #70747d
+
+!# yeah whatever, this is fine anyhoo?
+osd.hilight.bg: flat  
+osd.hilight.bg.color: #9ebde5
+osd.hilight.bg.colorTo: #749dcf
+osd.unhilight.bg: flat 
+osd.unhilight.bg.color: #BABDB6
+osd.unhilight.bg.colorTo: #efefef
