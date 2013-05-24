@@ -31,13 +31,15 @@ apt-get install keychain
 
 # pick a theme that matches sublime
 add-apt-repository ppa:webupd8team/themes
+apt-get update
 apt-get install mediterraneannight-gtk-theme
 
 # install a terminal with resizable fonts
-add-apt-repository ppa:elementaryos/daily
+add-apt-repository ppa:elementary-os/daily
+add-get update
 apt-get install pantheon-terminal
 
-cp ./root/etc/* /etc/
+cp -r ./root/etc/* /etc/
 
 echo "# let dropbox run" >> /etc/sysctl.conf
 echo "fs.inotify.max_user_watches=100000" >> /etc/sysctl.conf
