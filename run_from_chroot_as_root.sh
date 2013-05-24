@@ -34,7 +34,7 @@ add-apt-repository ppa:webupd8team/themes
 apt-get install mediterraneannight-gtk-theme
 
 # install a terminal with resizable fonts
-add-apt-repository ppa:elementaryos/daily
+add-apt-repository ppa:elementary-os/daily
 apt-get install pantheon-terminal
 
 cp ./root/etc/* /etc/
