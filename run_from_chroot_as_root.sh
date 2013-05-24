@@ -39,8 +39,5 @@ add-apt-repository ppa:elementary-os/daily
 add-get update
 apt-get install pantheon-terminal
 
-cp -r ./root/etc/* /etc/
-
-echo "# let dropbox run" >> /etc/sysctl.conf
-echo "fs.inotify.max_user_watches=100000" >> /etc/sysctl.conf
+rsync -a ./root/etc/ /etc/
 
