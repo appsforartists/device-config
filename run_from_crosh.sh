@@ -1,7 +1,7 @@
-#~/bin/bash
+#!/bin/bash
 
 
-if [! -f /home/chronos/user/Downloads/crouton ]; then
+if [ ! -f /home/chronos/user/Downloads/crouton ]; then
     wget -O /home/chronos/user/Downloads/crouton http://goo.gl/fd3zc
 fi
 
