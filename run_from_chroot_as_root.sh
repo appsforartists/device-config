@@ -1,4 +1,4 @@
-#~/bin/bash
+#!/bin/bash
 
 if [ -d /home/chronos/ ]; then
     echo "You must run this script from inside your chroot!"
@@ -36,7 +36,7 @@ apt-get install mediterraneannight-gtk-theme
 
 # install a terminal with resizable fonts
 add-apt-repository ppa:elementary-os/daily
-add-get update
+apt-get update
 apt-get install pantheon-terminal
 
 rsync -a ./root/etc/ /etc/
