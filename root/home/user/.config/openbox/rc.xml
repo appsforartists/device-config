@@ -128,7 +128,7 @@
     <name>desktop 2</name>
     -->
     </names>
-    <popupTime>0</popupTime>
+    <popupTime>875</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
        desktops.  Set this to 0 to disable the popup. -->
   </desktops>
@@ -221,67 +221,12 @@
     <screenEdgeWarpMouse>false</screenEdgeWarpMouse>
     <!-- Set this to TRUE to move the mouse pointer across the desktop when
        switching due to hitting the edge of the screen -->
-    <context name="Frame">
-      <mousebind button="A-Left" action="Press">
-        <action name="Focus"/>
-        <action name="Raise"/>
-      </mousebind>
-      <mousebind button="A-Left" action="Click">
-        <action name="Unshade"/>
-      </mousebind>
-      <mousebind button="A-Left" action="Drag">
-        <action name="Move"/>
-      </mousebind>
-      <mousebind button="A-Right" action="Press">
-        <action name="Focus"/>
-        <action name="Raise"/>
-        <action name="Unshade"/>
-      </mousebind>
-      <mousebind button="A-Right" action="Drag">
-        <action name="Resize"/>
-      </mousebind>
-      <mousebind button="A-Middle" action="Press">
-        <action name="Lower"/>
-        <action name="FocusToBottom"/>
-        <action name="Unfocus"/>
-      </mousebind>
-      <mousebind button="A-Up" action="Click">
-        <action name="GoToDesktop">
-          <to>previous</to>
-        </action>
-      </mousebind>
-      <mousebind button="A-Down" action="Click">
-        <action name="GoToDesktop">
-          <to>next</to>
-        </action>
-      </mousebind>
-      <mousebind button="C-A-Up" action="Click">
-        <action name="GoToDesktop">
-          <to>previous</to>
-        </action>
-      </mousebind>
-      <mousebind button="C-A-Down" action="Click">
-        <action name="GoToDesktop">
-          <to>next</to>
-        </action>
-      </mousebind>
-      <mousebind button="A-S-Up" action="Click">
-        <action name="SendToDesktop">
-          <to>previous</to>
-        </action>
-      </mousebind>
-      <mousebind button="A-S-Down" action="Click">
-        <action name="SendToDesktop">
-          <to>next</to>
-        </action>
-      </mousebind>
-    </context>
     <context name="Titlebar">
       <mousebind button="Left" action="Drag">
         <action name="Move"/>
       </mousebind>
       <mousebind button="Left" action="DoubleClick">
-        <action name="ToggleMaximize"/>
+        <action name="ToggleMaximizeFull"/>
       </mousebind>
       <mousebind button="Up" action="Click">
         <action name="if">
@@ -302,18 +247,6 @@
             <action name="Raise"/>
           </then>
         </action>
-      </mousebind>
-    </context>
-    <context name="Titlebar Top Right Bottom Left TLCorner TRCorner BRCorner BLCorner">
-      <mousebind button="Left" action="Press">
-        <action name="Focus"/>
-        <action name="Raise"/>
-        <action name="Unshade"/>
-      </mousebind>
-      <mousebind button="Middle" action="Press">
-        <action name="Lower"/>
-        <action name="FocusToBottom"/>
-        <action name="Unfocus"/>
       </mousebind>
       <mousebind button="Right" action="Press">
         <action name="Focus"/>
@@ -348,13 +281,6 @@
       <mousebind button="Left" action="Drag">
         <action name="Resize">
           <edge>bottom</edge>
-        </action>
-      </mousebind>
-      <mousebind button="Right" action="Press">
-        <action name="Focus"/>
-        <action name="Raise"/>
-        <action name="ShowMenu">
-          <menu>client-menu</menu>
         </action>
       </mousebind>
     </context>
@@ -597,7 +523,7 @@
   # order that they appear in this list
 
 
-    # each rule element can be left out or set to 'default' to specify to not 
+    # each rule element can be left out or set to 'default' to specify to not
     # change that attribute of the window
 
     <decor>yes</decor>
