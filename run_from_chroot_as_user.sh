@@ -1,4 +1,4 @@
-#~/bin/bash
+#!/bin/bash
 
 if [ -d /home/chronos/ ]; then
     echo "You must run this script from inside your chroot!"
