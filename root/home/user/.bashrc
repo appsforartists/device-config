@@ -1,1 +1,0 @@
-echo "export PATH=$PATH:~/bin/:~/Applications/cloud_sdk/bin/:~/bin/:~/Applications/cloud_sdk/platform/google_appengine/"
