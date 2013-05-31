@@ -25,6 +25,7 @@ ln -s ~/Applications/Sublime\ Text\ 2/sublime_text ~/bin/subl
 wget -O ~/Downloads/package_control.zip https://sublime.wbond.net/Package%20Control.sublime-package
 python -m zipfile -e ~/Downloads/package_control.zip ~/.config/sublime-text-2/Packages/Package\ Control
 git clone https://github.com/buymeasoda/soda-theme/ ~/.config/sublime-text-2/Packages/Theme\ -\ Soda
+git config --global core.editor "subl -n -w"
 
 # install AppEngine
 wget -O ~/Downloads/cloudsdk-0.9.2-linux-python.zip https://dl.google.com/dl/cloudsdk/cloudsdk-0.9.2-linux-python.zip
