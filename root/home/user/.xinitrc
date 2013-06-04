@@ -6,7 +6,7 @@ synclient HorizTwoFingerScroll=1
 synclient HorizScrollDelta=-49
 synclient VertScrollDelta=-49
 
-synclient PalmDetect=1
+syndaemon -d -t
 
 # run a window manager
 openbox-session
