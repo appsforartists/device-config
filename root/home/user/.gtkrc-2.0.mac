@@ -1,0 +1,156 @@
+
+binding "gtk-mac-alt-arrows"
+{
+  bind "<alt>Right"           { "move-cursor" (words, 1, 0) }
+  bind "<alt>KP_Right"        { "move-cursor" (words, 1, 0) }
+  bind "<alt>Left"            { "move-cursor" (words, -1, 0) }
+  bind "<alt>KP_Left"         { "move-cursor" (words, -1, 0) }
+  bind "<shift><alt>Right"    { "move-cursor" (words, 1, 1) }
+  bind "<shift><alt>KP_Right" { "move-cursor" (words, 1, 1) }
+  bind "<shift><alt>Left"     { "move-cursor" (words, -1, 1) }
+  bind "<shift><alt>KP_Left"  { "move-cursor" (words, -1, 1) }
+}
+
+class "GtkTextView" binding "gtk-mac-alt-arrows"
+class "GtkLabel" binding "gtk-mac-alt-arrows"
+class "GtkEntry" binding "gtk-mac-alt-arrows"
+
+
+binding "gtk-mac-alt-delete"
+{
+  bind "<alt>Delete" { "delete-from-cursor" (word-ends, 1) }
+  bind "<alt>KP_Delete" { "delete-from-cursor" (word-ends, 1) }
+  bind "<alt>BackSpace" { "delete-from-cursor" (word-ends, -1) }
+}
+
+class "GtkTextView" binding "gtk-mac-alt-delete"
+class "GtkEntry" binding "gtk-mac-alt-delete"
+
+
+binding "gtk-mac-cmd-c"
+{
+  bind "<alt>x" { "cut-clipboard" () }
+  bind "<alt>c" { "copy-clipboard" () }
+  bind "<alt>v" { "paste-clipboard" () }
+  unbind "<ctrl>x"
+  unbind "<ctrl>c"
+  unbind "<ctrl>v"
+}
+
+class "GtkTextView" binding "gtk-mac-cmd-c"
+class "GtkEntry" binding "gtk-mac-cmd-c"
+
+
+binding "gtk-mac-text-view"
+{
+  bind "<shift><alt>a" { "select-all" (0) }
+  bind "<alt>a" { "select-all" (1) }
+  unbind "<shift><ctrl>a"
+  unbind "<ctrl>a"
+}
+
+class "GtkTextView" binding "gtk-mac-text-view"
+
+
+binding "gtk-mac-label"
+{
+  bind "<alt>a" {
+    "move-cursor" (paragraph-ends, -1, 0)
+    "move-cursor" (paragraph-ends, 1, 1)
+  }
+  bind "<shift><alt>a" { "move-cursor" (paragraph-ends, 0, 0) }
+  bind "<alt>c" { "copy-clipboard" () }
+  unbind "<ctrl>a"
+  unbind "<shift><ctrl>a"
+  unbind "<ctrl>c"
+}
+
+class "GtkLabel" binding "gtk-mac-label"
+
+
+binding "gtk-mac-entry"
+{
+  bind "<alt>a" {
+    "move-cursor" (buffer-ends, -1, 0)
+    "move-cursor" (buffer-ends, 1, 1)
+  }
+  bind "<shift><alt>a" { "move-cursor" (visual-positions, 0, 0) }
+  unbind "<ctrl>a"
+  unbind "<shift><ctrl>a"
+}
+
+class "GtkEntry" binding "gtk-mac-entry"
+
+
+binding "gtk-mac-cmd-arrows"
+{
+  bind "<meta>Left" { "move-cursor" (paragraph-ends, -1, 0) }
+  bind "<meta>KP_Left" { "move-cursor" (paragraph-ends, -1, 0) }
+  bind "<shift><meta>Left" { "move-cursor" (paragraph-ends, -1, 1) }
+  bind "<shift><meta>KP_Left" { "move-cursor" (paragraph-ends, -1, 1) }
+  bind "<meta>Right" { "move-cursor" (paragraph-ends, 1, 0) }
+  bind "<meta>KP_Right" { "move-cursor" (paragraph-ends, 1, 0) }
+  bind "<shift><meta>Right" { "move-cursor" (paragraph-ends, 1, 1) }
+  bind "<shift><meta>KP_Right" { "move-cursor" (paragraph-ends, 1, 1) }
+}
+
+class "GtkTextView" binding "gtk-mac-cmd-arrows"
+class "GtkLabel" binding "gtk-mac-cmd-arrows"
+class "GtkEntry" binding "gtk-mac-cmd-arrows"
+
+
+binding "gtk-mac-emacs-like"
+{
+  bind "<ctrl>a" { "move-cursor" (paragraph-ends, -1, 0) }
+  bind "<shift><ctrl>a" { "move-cursor" (paragraph-ends, -1, 1) }
+  bind "<ctrl>e" { "move-cursor" (paragraph-ends, 1, 0) }
+  bind "<shift><ctrl>e" { "move-cursor" (paragraph-ends, 1, 1) }
+
+  bind "<ctrl>b" { "move-cursor" (logical-positions, -1, 0) }
+  bind "<shift><ctrl>b" { "move-cursor" (logical-positions, -1, 1) }
+  bind "<ctrl>f" { "move-cursor" (logical-positions, 1, 0) }
+  bind "<shift><ctrl>f" { "move-cursor" (logical-positions, 1, 1) }
+}
+
+class "GtkTextView" binding "gtk-mac-emacs-like"
+class "GtkLabel" binding "gtk-mac-emacs-like"
+class "GtkEntry" binding "gtk-mac-emacs-like"
+
+
+binding "gtk-mac-file-chooser"
+{
+  bind "<alt>v" { "location-popup-on-paste" () }
+  unbind "<ctrl>v"
+
+  bind "<alt><shift>G" { "location-popup" () }
+  bind "<alt><shift>H" { "home-folder" () }
+  bind "<alt>Up" { "up-folder" () }
+}
+
+class "GtkFileChooserDefault" binding "gtk-mac-file-chooser"
+
+
+binding "gtk-mac-tree-view"
+{
+  bind "<alt>a" { "select-all" () }
+  bind "<shift><alt>a" { "unselect-all" () }
+  bind "<alt>f" { "start-interactive-search" () }
+  bind "<alt>F" { "start-interactive-search" () }
+  unbind "<ctrl>a"
+  unbind "<shift><ctrl>a"
+  unbind "<ctrl>f"
+  unbind "<ctrl>F"
+}
+
+class "GtkTreeView" binding "gtk-mac-tree-view"
+
+
+binding "gtk-mac-icon-view"
+{
+  bind "<alt>a" { "select-all" () }
+  bind "<shift><alt>a" { "unselect-all" () }
+  unbind "<ctrl>a"
+  unbind "<shift><ctrl>a"
+}
+
+class "GtkIconView" binding "gtk-mac-icon-view"

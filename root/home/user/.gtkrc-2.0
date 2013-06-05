@@ -15,4 +15,4 @@ gtk-enable-input-feedback-sounds=1
 gtk-xft-antialias=1
 gtk-xft-hinting=1
 gtk-xft-hintstyle="hintfull"
-include "/home/brenton/.gtkrc-2.0.mine"
+include ".gtkrc-2.0.mine"
