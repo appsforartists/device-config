@@ -16,5 +16,7 @@ syndaemon -d -t -i 1
 # make the caps key on an external keyboard the same as the search key on a chromebook
 setxkbmap -option caps:super
 
+numlockx &
+
 # run a window manager
 openbox-session

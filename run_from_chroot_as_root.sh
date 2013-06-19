@@ -24,6 +24,7 @@ apt-get install openbox
 apt-get install lxappearance
 apt-get install python-xdg
 apt-get install gmrun
+apt-get install numlockx
 
 # install git
 apt-get install git
