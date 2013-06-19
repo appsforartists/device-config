@@ -3,9 +3,9 @@
 if [ -d /home/chronos/ ]; then
     echo "You must run this script from inside your chroot!"
     echo "Try running:"
-    echo "    cp ./init.sh /usr/share/chroot/dev/"
+    echo "    cp ./run_from_chroot_as_root.sh /usr/share/chroot/dev/"
     echo "    sudo enter-chroot -n dev"
-    echo "    sudo /init.sh"
+    echo "    sudo /run_from_chroot_as_root.sh"
 fi
 
 if [[ $EUID -ne 0 ]]; then
