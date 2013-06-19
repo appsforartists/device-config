@@ -199,10 +199,10 @@
         <command>brightness up</command>
       </action>
     </keybind>
-    <keybind key="A-Tab">
+    <keybind key="C-Tab">
       <action name="NextWindow"/>
     </keybind>
-    <keybind key="A-S-Tab">
+    <keybind key="C-S-Tab">
       <action name="PreviousWindow"/>
     </keybind>
     <keybind key="XF86PowerOff">

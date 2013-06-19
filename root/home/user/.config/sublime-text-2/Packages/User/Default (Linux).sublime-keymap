@@ -66,8 +66,8 @@
 	{ "keys": ["alt+shift+["], "command": "prev_view" },
 	{ "keys": ["alt+shift+]"], "command": "next_view" },
 
-	{ "keys": ["ctrl+tab"], "command": "next_view_in_stack" },
-	{ "keys": ["ctrl+shift+tab"], "command": "prev_view_in_stack" },
+	{ "keys": ["alt+tab"], "command": "next_view" },
+	{ "keys": ["alt+shift+tab"], "command": "prev_view" },
 
 	{ "keys": ["alt+a"], "command": "select_all" },
 	{ "keys": ["alt+shift+l"], "command": "split_selection_into_lines" },
