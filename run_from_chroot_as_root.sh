@@ -24,7 +24,7 @@ fi
 apt-get -y install python-software-properties
 
 add-apt-repository -y ppa:webupd8team/themes
-add-apt-repository -y ppa:elementary-os/daily
+add-apt-repository -y ppa:elementary-os/stable
 
 apt-get update
 
