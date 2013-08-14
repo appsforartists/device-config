@@ -15,6 +15,11 @@ if [[ $EUID -eq 0 ]]; then
     exit 1
 fi
 
+if [ ! -d ./root/ ]; then
+    echo "cd to pixel_webdev, then try again."
+    exit 1
+fi
+
 rsync -a ./root/home/user/ ~/
 
 mkdir ~/Applications

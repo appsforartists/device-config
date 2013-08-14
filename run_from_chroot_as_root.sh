@@ -15,6 +15,11 @@ if [[ $EUID -ne 0 ]]; then
     exit 1
 fi
 
+if [ ! -d ./root/ ]; then
+    echo "cd to pixel_webdev, then try again."
+    exit 1
+fi
+
 # install add-apt-repository
 apt-get install python-software-properties
 
