@@ -21,31 +21,19 @@ if [ ! -d ./root/ ]; then
 fi
 
 # install add-apt-repository
-apt-get install python-software-properties
+apt-get -y install python-software-properties
 
-# fix occasional dbus not found errors
-apt-get install dbus-x11
+add-apt-repository -y ppa:webupd8team/themes
+add-apt-repository -y ppa:elementary-os/daily
 
-# install window manager
-apt-get install openbox
-apt-get install lxappearance
-apt-get install python-xdg
-apt-get install gmrun
-apt-get install numlockx
-
-# install git
-apt-get install git
-apt-get install keychain
-
-# pick a theme that matches sublime
-add-apt-repository ppa:webupd8team/themes
 apt-get update
-apt-get install mediterraneannight-gtk-theme
 
-# install a terminal with resizable fonts
-add-apt-repository ppa:elementary-os/daily
-apt-get update
-apt-get install pantheon-terminal
+# install window manager, git, gtk theme, and terminal with resizable fonts
+apt-get -y install \
+openbox lxappearance python-xdg dbus-x11 gmrun numlockx \
+git keychain \
+mediterraneannight-gtk-theme \
+pantheon-terminal \
 
 rsync -a ./root/etc/ /etc/
 
