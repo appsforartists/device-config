@@ -21,6 +21,7 @@ if [ ! -d ./root/ ]; then
 fi
 
 rsync -a ./root/home/user/ ~/
+ln -s /var/host/Xauthority ~/.Xauthority
 
 mkdir ~/Applications
 mkdir ~/bin
