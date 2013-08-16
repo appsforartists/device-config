@@ -3,9 +3,9 @@
 if [ -d /home/chronos/ ]; then
     echo "You must run this script from inside your chroot!"
     echo "Try running:"
-    echo "    cp ./ /usr/local/chroots/dev/pixel_webdev"
+    echo "    cp ./ /usr/local/chroots/dev/opt/pixel_webdev"
     echo "    sudo enter-chroot -n dev"
-    echo "    cd /pixel_webdev/"
+    echo "    cd /opt/pixel_webdev/"
     echo "    sudo ./run_from_chroot_as_root.sh"
     exit 1
 fi
