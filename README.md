@@ -35,13 +35,15 @@ Installation
 3. Open the **Files** app and extract the zip you just downloaded.
 4. Hit `Ctrl-Alt-t` to enter the crosh shell.
 5. `shell`
-6. `cd ~/Downloads/pixel_webdev`
-7. `sudo run_from_crosh.sh`
-8. `cp ./ /usr/local/chroots/dev/opt/pixel_webdev`
-9. `sudo enter-chroot -n dev`
-10. `cd /opt/pixel_webdev`
-11. `sudo run_from_chroot_as_root.sh`
-12. `run_from_chroot_as_user.sh`
+6. `sudo su -`
+7. `cd /home/chronos/user/Downloads/pixel_webdev-master`
+8. `sh -e run_from_crosh.sh`
+9. `cp -r ./ /usr/local/chroots/dev/opt/pixel_webdev`
+10. `sudo enter-chroot -n dev`
+11. `sudo chown -R $USER:$USER /opt/pixel_webdev`
+12. `cd /opt/pixel_webdev`
+13. `sudo sh -e run_from_chroot_as_root.sh`
+14. `sh -e run_from_chroot_as_user.sh`
 
 Usage
 -----
