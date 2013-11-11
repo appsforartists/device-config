@@ -38,3 +38,5 @@ git config --global core.editor "subl -n -w"
 # install AppEngine
 wget -O ~/Downloads/google-cloud-sdk.zip https://dl.google.com/dl/cloudsdk/release/google-cloud-sdk.zip
 python -m zipfile -e ~/Downloads/google-cloud-sdk.zip ~/Applications/
+
+source ~/.bash_profile
