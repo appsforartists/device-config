@@ -27,8 +27,8 @@ mkdir ~/Applications
 mkdir ~/bin
 
 # install Sublime Text
-wget -O ~/Downloads/sublime_text_2.0.1.tar.bz2 http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.1%20x64.tar.bz2
-tar -xvjf ~/Downloads/sublime_text_2.0.1.tar.bz2 -C ~/Applications/
+wget -O ~/Downloads/sublime_text_2.0.2.tar.bz2 http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.2%20x64.tar.bz2
+tar -xvjf ~/Downloads/sublime_text_2.0.2.tar.bz2 -C ~/Applications/
 ln -s ~/Applications/Sublime\ Text\ 2/sublime_text ~/bin/subl
 wget -O ~/Downloads/package_control.zip https://sublime.wbond.net/Package%20Control.sublime-package
 python -m zipfile -e ~/Downloads/package_control.zip ~/.config/sublime-text-2/Packages/Package\ Control
