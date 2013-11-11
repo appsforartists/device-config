@@ -36,7 +36,5 @@ git clone https://github.com/buymeasoda/soda-theme/ ~/.config/sublime-text-2/Pac
 git config --global core.editor "subl -n -w"
 
 # install AppEngine
-wget -O ~/Downloads/cloudsdk-0.9.2-linux-python.zip https://dl.google.com/dl/cloudsdk/cloudsdk-0.9.2-linux-python.zip
-python -m zipfile -e ~/Downloads/cloudsdk-0.9.2-linux-python.zip ~/Applications/cloud_sdk
-mv ~/Applications/cloud_sdk/cloudsdk-0.9.2/* ~/Applications/cloud_sdk
-rmdir ~/Applications/cloud_sdk/cloudsdk-0.9.2
+wget -O ~/Downloads/google-cloud-sdk.zip https://dl.google.com/dl/cloudsdk/release/google-cloud-sdk.zip
+python -m zipfile -e ~/Downloads/google-cloud-sdk.zip ~/Applications/
