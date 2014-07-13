@@ -19,13 +19,18 @@ Includes:
      - Inconsolata (OFL)
      - Roboto (Apache)
 
+ - Pantheon Terminal
+
+ - Node, NPM, and Bower
+
  - Sublime Text
    - Package Control (MIT)
-   - Soda theme (scaled for the Pixel's display) (CC-by-SA)
+   - Spacegray Eighties theme (scaled for the Pixel's display)
 
- - Git
+ - Git, along with an SSH keychain
 
  - Google Cloud SDK with AppEngine
+   - Google has replaced their zipball with an installer.  I need to take the time to automatically install it.  In the mean time, try `sudo sh -e /opt/google-cloud-sdk/install.sh`.
 
 Installation
 ------------
