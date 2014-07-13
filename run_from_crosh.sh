@@ -11,7 +11,7 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 sh -e /home/chronos/user/Downloads/crouton -d -f /home/chronos/user/Downloads/crouton_base.tar.bz2
-sh -e /home/chronos/user/Downloads/crouton -f /home/chronos/user/Downloads/crouton_base.tar.bz2 -r raring -t touch -n dev
+sh -e /home/chronos/user/Downloads/crouton -f /home/chronos/user/Downloads/crouton_base.tar.bz2 -r raring -t touch,extension -n dev
 
 # copy chromeos assets into chroot
 cp -r /usr/share/cursors/xorg-x11/chromeos /usr/local/chroots/dev/usr/share/icons/
