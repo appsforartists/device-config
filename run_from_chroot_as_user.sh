@@ -35,8 +35,4 @@ python -m zipfile -e ~/Downloads/package_control.zip ~/.config/sublime-text-2/Pa
 git clone https://github.com/buymeasoda/soda-theme/ ~/.config/sublime-text-2/Packages/Theme\ -\ Soda
 git config --global core.editor "subl -n -w"
 
-# install AppEngine
-wget -O ~/Downloads/google-cloud-sdk.zip https://dl.google.com/dl/cloudsdk/release/google-cloud-sdk.zip
-python -m zipfile -e ~/Downloads/google-cloud-sdk.zip ~/Applications/
-
 source ~/.bash_profile

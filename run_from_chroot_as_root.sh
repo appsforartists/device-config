@@ -48,5 +48,10 @@ ln -s /usr/local/n/versions/0.10.29/lib/node_modules/npm/cli.js /usr/bin/npm
 npm install -g n
 npm install -g bower
 
+# install AppEngine
+wget -O /opt/google-cloud-sdk.zip https://dl.google.com/dl/cloudsdk/release/google-cloud-sdk.zip
+python -m zipfile -e /opt/google-cloud-sdk.zip /opt/
+rm /opt/google-cloud-sdk.zip
+
 rsync -a ./root/etc/ /etc/
 
