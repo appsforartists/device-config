@@ -1,0 +1,12 @@
+{
+	"color_scheme": "Packages/Theme - Spacegray/base16-eighties.dark.tmTheme",
+	"dpi_scale": 2.0,
+	"font_face": "Inconsolata",
+	"font_size": 14,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"theme": "Spacegray Eighties.sublime-theme",
+	"translate_tabs_to_spaces": true
+}

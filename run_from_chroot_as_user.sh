@@ -23,16 +23,11 @@ fi
 rsync -a ./root/home/user/ ~/
 ln -s /var/host/Xauthority ~/.Xauthority
 
-mkdir ~/Applications
-mkdir ~/bin
-
-# install Sublime Text
-wget -O ~/Downloads/sublime_text_2.0.2.tar.bz2 http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.2%20x64.tar.bz2
-tar -xvjf ~/Downloads/sublime_text_2.0.2.tar.bz2 -C ~/Applications/
-ln -s ~/Applications/Sublime\ Text\ 2/sublime_text ~/bin/subl
+# install Sublime Text packages
 wget -O ~/Downloads/package_control.zip https://sublime.wbond.net/Package%20Control.sublime-package
-python -m zipfile -e ~/Downloads/package_control.zip ~/.config/sublime-text-2/Packages/Package\ Control
-git clone https://github.com/buymeasoda/soda-theme/ ~/.config/sublime-text-2/Packages/Theme\ -\ Soda
+python -m zipfile -e ~/Downloads/package_control.zip ~/.config/sublime-text-3/Packages/Package\ Control
+git clone https://github.com/kkga/spacegray/ ~/.config/sublime-text-3/Packages/Theme\ -\ Spacegray
+sed s/.png/@2x.png/ ~/.config/sublime-text-3/Packages/Theme\ -\ Spacegray/Spacegray\ Eighties.sublime-theme >> ~/.config/sublime-text-3/Packages/User/Spacegray\ Eighties.sublime-theme
 git config --global core.editor "subl -n -w"
 
 source ~/.bash_profile

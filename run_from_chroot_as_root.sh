@@ -48,6 +48,11 @@ ln -s /usr/local/n/versions/0.10.29/lib/node_modules/npm/cli.js /usr/bin/npm
 npm install -g n
 npm install -g bower
 
+# install Sublime Text
+wget -O /opt/sublime-text_build-3059_amd64.deb http://c758482.r82.cf2.rackcdn.com/sublime-text_build-3059_amd64.deb
+dpkg -i /opt/sublime-text_build-3059_amd64.deb
+rm /opt/sublime-text_build-3059_amd64.deb
+
 # install AppEngine
 wget -O /opt/google-cloud-sdk.zip https://dl.google.com/dl/cloudsdk/release/google-cloud-sdk.zip
 python -m zipfile -e /opt/google-cloud-sdk.zip /opt/
