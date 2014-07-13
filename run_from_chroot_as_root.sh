@@ -33,6 +33,7 @@ apt-get -y install \
 openbox lxappearance python-xdg dbus-x11 gmrun numlockx \
 git keychain \
 mediterraneannight-gtk-theme \
+gsettings-desktop-schemas \
 pantheon-terminal \
 
 rsync -a ./root/etc/ /etc/
