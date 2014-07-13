@@ -1,7 +1,7 @@
 Run Sublime and Git on your Chromebook Pixel
 ----------
 
-![](http://i.imgur.com/9JViE6B.png)
+![](http://i.imgur.com/NNvuXHk.png)
 
 This is me trying to remember all the stuff I did to turn my Pixel into a web dev machine.  Hopefully, I can save you a couple days of your life experimenting with all sorts of Linuxy stuff before you can be productive.
 
