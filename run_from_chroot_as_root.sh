@@ -28,13 +28,25 @@ add-apt-repository -y ppa:elementary-os/stable
 
 apt-get update
 
-# install window manager, git, gtk theme, and terminal with resizable fonts
+# install curl, window manager, git, gtk theme, and terminal with resizable fonts
 apt-get -y install \
+curl \
 openbox lxappearance python-xdg dbus-x11 gmrun numlockx \
 git keychain \
 mediterraneannight-gtk-theme \
-gsettings-desktop-schemas \
-pantheon-terminal \
+pantheon-terminal gsettings-desktop-schemas \
+
+# install node, npm, and bower
+mkdir -p /usr/local/n/versions/
+cd /usr/local/n/versions/
+wget -O ./node-v0.10.29-linux-x64.tar.gz http://nodejs.org/dist/v0.10.29/node-v0.10.29-linux-x64.tar.gz
+tar -xzvf ./node-v0.10.29-linux-x64.tar.gz
+rm ./node-v0.10.29-linux-x64.tar.gz
+mv node-v0.10.29-linux-x64 0.10.29
+ln -s /usr/local/n/versions/0.10.29/bin/node /usr/bin/node
+ln -s /usr/local/n/versions/0.10.29/lib/node_modules/npm/cli.js /usr/bin/npm
+npm install -g n
+npm install -g bower
 
 rsync -a ./root/etc/ /etc/
 
