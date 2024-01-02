@@ -57,6 +57,8 @@
     })
   ];
 
+  services.handheldDaemon.enable = true;
+
   # This is for sublime4 and should be migrated to home-manager as
   # `permittedInsecurePackages = [`
   nixpkgs.config.permittedInsecurePackages = [
