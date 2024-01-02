@@ -2,7 +2,12 @@
   description = "appsforartists/device-config";
 
   inputs = {
-    nixpkgs.url = "github:appsforartists/nixpkgs/qtwayland";
+    # # If you don't have nixpkgs checked out, the branch I use is here:
+    # nixpkgs.url = "github:appsforartists/nixpkgs/appsforartists";
+    # # not sure how to use `mainUser.userName` in an `input`, so please excuse
+    # # the hardcoding.
+    nixpkgs.url = "git+file:///home/brenton/Projects/nixpkgs";
+
     nix-gaming = {
       url = "github:fufexan/nix-gaming";
       inputs.nixpkgs.follows = "nixpkgs";

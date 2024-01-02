@@ -85,18 +85,17 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1701317318,
-        "narHash": "sha256-VtpzTjVk7gYn1HYbEkqH/jLxPJa9xEIpsYikOKXEK28=",
-        "owner": "appsforartists",
-        "repo": "nixpkgs",
-        "rev": "1937f8a3cd6d4c12015dc86221627b4036b15c85",
-        "type": "github"
+        "lastModified": 1704154725,
+        "narHash": "sha256-Ye+24N85n9rpW4AgDLpEfq8AD/caUAim0uBCrrAhj8Q=",
+        "ref": "refs/heads/appsforartists",
+        "rev": "2e5d2c5686c0fcdd95a17b8d46de840967836691",
+        "revCount": 552620,
+        "type": "git",
+        "url": "file:///home/brenton/Projects/nixpkgs"
       },
       "original": {
-        "owner": "appsforartists",
-        "ref": "qtwayland",
-        "repo": "nixpkgs",
-        "type": "github"
+        "type": "git",
+        "url": "file:///home/brenton/Projects/nixpkgs"
       }
     },
     "nixpkgs-lib": {
