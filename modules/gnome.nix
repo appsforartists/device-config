@@ -11,8 +11,9 @@
   ];
 
   config = {
-    # disable autostart since Steam autostarts
-    services.xserver.displayManager.gdm.enable = lib.mkForce false;
+    # TODO: find a way to check if config.jovian exists first
+    jovian.steam.desktopSession = "gnome";
+    services.xserver.displayManager.gdm.enable = lib.mkForce (!config.jovian.steam.autoStart);
 
     services.xserver.displayManager.autoLogin = {
       enable = true;

@@ -21,7 +21,6 @@
       user = config.mainUser.userName;
       enable = true;
       autoStart = true;
-      desktopSession = "gnome";
     };
 
     programs.steam = {
