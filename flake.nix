@@ -12,6 +12,9 @@
       url = "github:fufexan/nix-gaming";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    gnome-mobile-experimental = {
+      url = "github:chuangzhu/nixpkgs-gnome-mobile";
+    };
     jovian = {
       url = "github:Jovian-Experiments/Jovian-NixOS/f6449e2cc38f2be0a32f1d6e9caf50c4c76898b7";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -22,6 +25,7 @@
     nixpkgs,
     jovian,
     nix-gaming,
+    gnome-mobile-experimental,
     ...
   } @ inputs:
 
@@ -49,6 +53,7 @@
           }
           mainUserModule
           ./modules/sd-card.nix
+          ./modules/gnome.nix
           ./modules/steam.nix
           ./hosts/go/configuration.nix
         ];

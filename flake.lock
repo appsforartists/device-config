@@ -18,6 +18,21 @@
         "type": "github"
       }
     },
+    "gnome-mobile-experimental": {
+      "locked": {
+        "lastModified": 1701146445,
+        "narHash": "sha256-X9+h/uJLuXCrgOe2/Q2ua46dXC2lyH6jpRXLonvIq8s=",
+        "owner": "chuangzhu",
+        "repo": "nixpkgs-gnome-mobile",
+        "rev": "2b21b49efa1fec2d7744ff20de01115f98e96ad3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "chuangzhu",
+        "repo": "nixpkgs-gnome-mobile",
+        "type": "github"
+      }
+    },
     "jovian": {
       "inputs": {
         "nix-github-actions": "nix-github-actions",
@@ -48,11 +63,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1703207739,
-        "narHash": "sha256-KG8hgOj5OGm0kkS3PWEHCidv1IqgsT7+Cb48/IJhrrc=",
+        "lastModified": 1704158066,
+        "narHash": "sha256-o2Jv3xF08/iNK1hTZxMifjlMEkln+exst3QsV+wF6b0=",
         "owner": "fufexan",
         "repo": "nix-gaming",
-        "rev": "d8be07e1b418b71ff902fd05e2f7ad4e6cc4a10e",
+        "rev": "6c44aa8bde2c48c99d354cac2e6a62a2395f43f2",
         "type": "github"
       },
       "original": {
@@ -118,6 +133,7 @@
     },
     "root": {
       "inputs": {
+        "gnome-mobile-experimental": "gnome-mobile-experimental",
         "jovian": "jovian",
         "nix-gaming": "nix-gaming",
         "nixpkgs": "nixpkgs"
