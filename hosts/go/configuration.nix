@@ -57,7 +57,10 @@
     })
   ];
 
-  services.handheldDaemon.enable = true;
+  services.handheldDaemon = {
+    enable = true;
+    user = config.mainUser.userName;
+  };
 
   # This is for sublime4 and should be migrated to home-manager as
   # `permittedInsecurePackages = [`

@@ -63,11 +63,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1704158066,
-        "narHash": "sha256-o2Jv3xF08/iNK1hTZxMifjlMEkln+exst3QsV+wF6b0=",
+        "lastModified": 1704244428,
+        "narHash": "sha256-n3KZlxx1QS3919I1O77OhBouUeetlLpmQQcIx3dqAso=",
         "owner": "fufexan",
         "repo": "nix-gaming",
-        "rev": "6c44aa8bde2c48c99d354cac2e6a62a2395f43f2",
+        "rev": "bd7442917422de061bcf61323b07abbb93bdb766",
         "type": "github"
       },
       "original": {
@@ -100,10 +100,10 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1704179080,
-        "narHash": "sha256-71WzxMvB12L3fJAdD3tZLmct99KKHe1z6d7jP6qv/FM=",
+        "lastModified": 1704256994,
+        "narHash": "sha256-NpKJEEhwnK7i2Ba2LxxJCW0OtkE2nt5I/n1BUeTs2q4=",
         "ref": "refs/heads/appsforartists",
-        "rev": "4d0f713cc38fc1837ecda439ca9d3647ba01faca",
+        "rev": "2e5beaa701dde6553ba8930e361760bcdf413592",
         "revCount": 552620,
         "type": "git",
         "url": "file:///home/brenton/Projects/nixpkgs"
