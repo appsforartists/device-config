@@ -23,6 +23,11 @@
       autoStart = true;
     };
 
+    jovian.decky-loader = {
+      user = config.mainUser.userName;
+      enable = true;
+    };
+
     programs.steam = {
       enable = true;
       extest.enable = true;
