@@ -56,6 +56,7 @@
           ./modules/gnome.nix
           ./modules/sd-card.nix
           ./modules/steam.nix
+          ./modules/sublime.nix
           ./hosts/go/configuration.nix
         ];
       };
