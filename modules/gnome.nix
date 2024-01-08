@@ -20,28 +20,14 @@
       user = config.mainUser.userName;
     };
 
-    # reenable stuff that the gnome-mobile flake hides
-    environment.systemPackages = with pkgs.gnome; [
+    # remove all the GNOME default apps, and explicitly pick the ones that might be useful
+    services.gnome.core-utilities.enable = false;
+    environment.systemPackages = with pkgs; with pkgs.gnome; [
       baobab # disk space analyzer
-    ];
-
-    environment.gnome.excludePackages = with pkgs; with pkgs.gnome; [
-      atomix # puzzle game
-      cheese # webcam tool
-      epiphany # web browser
-      evince # document viewer
-      geary # email reader
-      gnome-characters # emoji picker
-      gnome-connections # vnc/remote desktop
-      gnome-music
-      gnome-photos
-      gnome-terminal
-      hitori # sudoku game
-      iagno # go game
-      simple-scan # document scanner
-      tali # poker game
-      totem # video player
-      yelp # help
+      gnome-console # terminal
+      gnome-font-viewer
+      gnome-system-monitor
+      nautilus # file manager
     ];
   };
 }
