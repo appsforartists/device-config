@@ -62,37 +62,11 @@
     user = config.mainUser.userName;
   };
 
-  # This is for sublime4 and should be migrated to home-manager as
-  # `permittedInsecurePackages = [`
-  nixpkgs.config.permittedInsecurePackages = [
-    "openssl-1.1.1w"
-  ];
-
   environment.systemPackages = with pkgs; [
     git
     toybox
 
-    protontricks
-    # maliit-keyboard
-    libsForQt5.mauiPackages.station
-    libsForQt5.mauiPackages.index
-
-    libsForQt5.plasma-settings
-    # libsForQt5.plasma-remotecontrollers
-
-    ## TODO: investigate insecure openssl dependency
-    sublime4
-
     p7zip
-    lenovo-legion
-    hwinfo
-    bluez
-    usbutils
-    hidrd
-    linuxConsoleTools
-    joystickwake
-    jstest-gtk
-    sdl-jstest
   ];
 
   hardware.opengl.driSupport = true;
