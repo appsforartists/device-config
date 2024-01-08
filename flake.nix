@@ -52,8 +52,9 @@
             networking.hostName = "${ goHostname }";
           }
           mainUserModule
-          ./modules/sd-card.nix
+          ./modules/chrome.nix
           ./modules/gnome.nix
+          ./modules/sd-card.nix
           ./modules/steam.nix
           ./hosts/go/configuration.nix
         ];

@@ -80,8 +80,6 @@
     libsForQt5.plasma-settings
     # libsForQt5.plasma-remotecontrollers
 
-    google-chrome
-
     ## TODO: investigate insecure openssl dependency
     sublime4
 
