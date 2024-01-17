@@ -27,6 +27,7 @@
       gnome-console # terminal
       gnome-font-viewer
       gnome-system-monitor
+      gnomeExtensions.force-phone-mode
       nautilus # file manager
     ];
   };
