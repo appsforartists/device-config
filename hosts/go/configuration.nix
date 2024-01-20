@@ -23,6 +23,11 @@
 
     initrd.kernelModules = ["amdgpu"];
 
+    # zenpower is supposed to be better for reading sensors on a modern AMD APU
+    extraModulePackages = with config.boot.kernelPackages; [zenpower];
+    kernelModules = ["zenpower"];
+    blacklistedKernelModules = ["k10temp"];
+
     # doesn't seem to be useful yet
     # extraModulePackages = with config.boot.kernelPackages; [ lenovo-legion-module ];
 
