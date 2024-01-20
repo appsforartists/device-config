@@ -8,54 +8,39 @@
     ./hardware-configuration.nix
   ];
 
-  boot = lib.mkMerge [
-    {
-      initrd.kernelModules = ["amdgpu"];
-      loader = {
-        systemd-boot = {
-          enable = true;
-          # "1" fixes the orientation, but the text is unfortunately small.
-          # "max" also fixes the orientation, but stretches the text to fill the
-          # screen.
-          # The text is clipped no matter which option you choose.
-          consoleMode = "max";
-          # the docs say to turn this off on modern systems for a more secure
-          # setup.
-          editor = false;
+  boot = {
+    kernelPackages = pkgs.linuxPackages_6_7;
+    kernelPatches = [
+      rec {
+        name = "legion-go-controllers";
+        patch = pkgs.fetchpatch {
+          name = name + ".patch";
+          url = "https://github.com/appsforartists/linux/compare/master...legion-go-controllers.patch";
+          sha256 = "sha256-2OX8hlsjbqANV1cwZjT4+e5pvLGSNQ/Eh92HK9yT6z4=";
         };
-        efi.canTouchEfiVariables = true;
+      }
+    ];
+
+    initrd.kernelModules = ["amdgpu"];
+
+    # doesn't seem to be useful yet
+    # extraModulePackages = with config.boot.kernelPackages; [ lenovo-legion-module ];
+
+    loader = {
+      systemd-boot = {
+        enable = true;
+        # "1" fixes the orientation, but the text is unfortunately small.
+        # "max" also fixes the orientation, but stretches the text to fill the
+        # screen.
+        # The text is clipped no matter which option you choose.
+        consoleMode = "max";
+        # the docs say to turn this off on modern systems for a more secure
+        # setup.
+        editor = false;
       };
-      # doesn't seem to be useful yet
-      # extraModulePackages = with config.boot.kernelPackages; [ lenovo-legion-module ];
-    }
-
-    # modern devices require modern kernels
-    # (the screen will go into epilepsy mode if you use the standard kernel)
-    (lib.mkIf (lib.versionOlder pkgs.linux.version "6.6") {
-      kernelPackages = lib.mkDefault pkgs.linuxPackages_6_6;
-      kernelPatches = [
-        rec {
-          name = "legion-go-display-quirk";
-          patch = pkgs.fetchpatch {
-            name = name + ".patch";
-            url = "https://github.com/appsforartists/linux/compare/master...legion-go-display-quirk.patch";
-            sha256 = "sha256-BfqrFUQutcTMlzQdsKvOLhRUIo+63S1imWab4QjBO6c=";
-          };
-        }
-        rec {
-          name = "legion-go-controllers";
-          patch = pkgs.fetchpatch {
-            name = name + ".patch";
-            url = "https://github.com/appsforartists/linux/compare/master...legion-go-controllers.patch";
-            sha256 = "sha256-2OX8hlsjbqANV1cwZjT4+e5pvLGSNQ/Eh92HK9yT6z4=";
-
-            # with logging
-            # sha256 = "sha256-BfqrFUQutcTMlzQdsKvOLhRUIo+63S1imWab4QjBO6c=";
-          };
-        }
-      ];
-    })
-  ];
+      efi.canTouchEfiVariables = true;
+    };
+  };
 
   services.handheldDaemon = {
     enable = true;
