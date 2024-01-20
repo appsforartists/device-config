@@ -41,17 +41,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1703890973,
-        "narHash": "sha256-PAEnDxSweS4+cT6BBQ+nxUHDHj8xvDgGkRB4B/4wnTQ=",
+        "lastModified": 1705667791,
+        "narHash": "sha256-J0JYfA6eFdHluLnROVDkrqbYacWcJXYKXeJAFayDiAE=",
         "owner": "Jovian-Experiments",
         "repo": "Jovian-NixOS",
-        "rev": "f6449e2cc38f2be0a32f1d6e9caf50c4c76898b7",
+        "rev": "330b7a78fcba967f2273ae71fb3c4bfb03b5dd21",
         "type": "github"
       },
       "original": {
         "owner": "Jovian-Experiments",
         "repo": "Jovian-NixOS",
-        "rev": "f6449e2cc38f2be0a32f1d6e9caf50c4c76898b7",
         "type": "github"
       }
     },
@@ -63,11 +62,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1705434512,
-        "narHash": "sha256-bQJjtlHWU5aOnEtbZfMRuqXvHd5ufQEVATDY0gN4ZCA=",
+        "lastModified": 1705540761,
+        "narHash": "sha256-Bj5XUG194u0AC0KL4d+nmX3Xuz56u0PVzTFYYHdqh7o=",
         "owner": "fufexan",
         "repo": "nix-gaming",
-        "rev": "e2abe296c5fb4673207e0c2b45b12507629970e5",
+        "rev": "184c9a3f7c289f12d2732bcd6b24f0967f4a380f",
         "type": "github"
       },
       "original": {
@@ -100,11 +99,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1705516499,
-        "narHash": "sha256-qhUGXCm4R+TDk6K/gYmRgVRzL0JYRvU3XsfRjlUpoB0=",
+        "lastModified": 1705740174,
+        "narHash": "sha256-bZmsuYFpKlIRJXj+Jgg7vv2yZoivlyhBhMnVzvXPahk=",
         "ref": "refs/heads/appsforartists",
-        "rev": "f0edb1db58bfdb9cc10f821f43aebca77e7ec16c",
-        "revCount": 552623,
+        "rev": "439698b6a61fc0a5ba7d4815600e123cd88ed5fa",
+        "revCount": 573219,
         "type": "git",
         "url": "file:///home/brenton/Projects/nixpkgs"
       },
