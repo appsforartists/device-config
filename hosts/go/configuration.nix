@@ -47,7 +47,7 @@
     };
   };
 
-  services.handheldDaemon = {
+  services.handheld-daemon = {
     enable = true;
     user = config.mainUser.userName;
   };
