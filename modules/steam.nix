@@ -33,7 +33,7 @@
       extest.enable = true;
       remotePlay.openFirewall = true;
       extraCompatPackages = [
-        inputs.nix-gaming.packages.${system}.proton-ge
+        pkgs.proton-ge-bin
       ];
     };
   };
