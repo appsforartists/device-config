@@ -8,10 +8,6 @@
     # # the hardcoding.
     nixpkgs.url = "git+file:///home/brenton/Projects/nixpkgs";
 
-    nix-gaming = {
-      url = "github:fufexan/nix-gaming";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     gnome-mobile-experimental = {
       url = "github:chuangzhu/nixpkgs-gnome-mobile";
     };
@@ -24,7 +20,6 @@
   outputs = {
     nixpkgs,
     jovian,
-    nix-gaming,
     gnome-mobile-experimental,
     ...
   } @ inputs:
