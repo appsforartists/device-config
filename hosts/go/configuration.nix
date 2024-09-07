@@ -48,8 +48,6 @@
     p7zip
   ];
 
-  hardware.opengl.driSupport = true;
-
   networking.networkmanager = {
     enable = true;
     wifi.powersave = false;
@@ -72,8 +70,6 @@
 
   powerManagement.enable = true;
 
-  # Enable sound with pipewire.
-  sound.enable = true;
   hardware.pulseaudio.enable = lib.mkForce false; #forcing to make plasma-mobile deal with it
   security.rtkit.enable = true;
   services.pipewire = {
