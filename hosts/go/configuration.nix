@@ -9,18 +9,7 @@
   ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_6_7;
-    kernelPatches = [
-      rec {
-        name = "legion-go-controllers";
-        patch = pkgs.fetchpatch {
-          name = name + ".patch";
-          url = "https://github.com/appsforartists/linux/compare/master...legion-go-controllers.patch";
-          sha256 = "sha256-2OX8hlsjbqANV1cwZjT4+e5pvLGSNQ/Eh92HK9yT6z4=";
-        };
-      }
-    ];
-
+    kernelPackages = pkgs.linuxPackages_6_10;
     initrd.kernelModules = ["amdgpu"];
 
     # zenpower is supposed to be better for reading sensors on a modern AMD APU
