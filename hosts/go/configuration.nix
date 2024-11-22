@@ -9,7 +9,7 @@
   ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_6_10;
+    kernelPackages = pkgs.linuxPackages_6_12;
     initrd.kernelModules = ["amdgpu"];
 
     # zenpower is supposed to be better for reading sensors on a modern AMD APU
