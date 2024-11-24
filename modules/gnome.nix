@@ -6,13 +6,14 @@
   system,
   ...
 }: {
-  imports = [
-    inputs.gnome-mobile-experimental.nixosModules.gnome-mobile
-  ];
+  # imports = [
+  #   inputs.gnome-mobile-experimental.nixosModules.gnome-mobile
+  # ];
 
   config = {
     # TODO: find a way to check if config.jovian exists first
     jovian.steam.desktopSession = "gnome";
+    services.xserver.desktopManager.gnome.enable = true;
     services.xserver.displayManager.gdm.enable = lib.mkForce (!config.jovian.steam.autoStart);
 
     services.displayManager.autoLogin = {
