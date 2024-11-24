@@ -15,6 +15,13 @@
       url = "github:Jovian-Experiments/Jovian-NixOS";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
+  };
+
+  nixConfig = {
+    extra-substituters = [ "https://cosmic.cachix.org/" ];
+    extra-trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
   };
 
   outputs = {
@@ -48,7 +55,7 @@
           }
           mainUserModule
           ./modules/chrome.nix
-          ./modules/gnome.nix
+          ./modules/cosmic.nix
           ./modules/sd-card.nix
           ./modules/steam.nix
           ./modules/sublime.nix
