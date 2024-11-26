@@ -11,8 +11,17 @@ in {
   config = {
     environment.systemPackages = with pkgs; [
       efibootmgr
+      (
+        writeShellApplication {
+          name = name;
+          text = ''
+            bootctl set-oneshot auto-windows;
+            systemctl reboot;
+          '';
+        }
+      )
       (stdenv.mkDerivation {
-        name = name;
+        name = "${name}-alias";
         unpackPhase = ''
           # source is inline, so skip downloading
         '';
@@ -20,9 +29,7 @@ in {
           (makeDesktopItem {
             name = name;
             desktopName = "Windows XP";
-            exec = ''
-              systemctl reboot --boot-loader-entry=auto-windows
-            '';
+            exec = name;
           })
         ];
         nativeBuildInputs = [copyDesktopItems];
