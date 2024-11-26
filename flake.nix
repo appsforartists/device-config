@@ -12,7 +12,7 @@
       url = "github:chuangzhu/nixpkgs-gnome-mobile";
     };
     jovian = {
-      url = "github:Jovian-Experiments/Jovian-NixOS";
+      url = "git+file:///home/brenton/Projects/Jovian-NixOS";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
