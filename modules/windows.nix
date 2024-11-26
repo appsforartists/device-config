@@ -11,17 +11,8 @@ in {
   config = {
     environment.systemPackages = with pkgs; [
       efibootmgr
-      (
-        writeShellApplication {
-          name = name;
-          text = ''
-            bootctl set-oneshot auto-windows;
-            systemctl reboot;
-          '';
-        }
-      )
       (stdenv.mkDerivation {
-        name = "${name}-alias";
+        name = name;
         unpackPhase = ''
           # source is inline, so skip downloading
         '';
@@ -29,11 +20,21 @@ in {
           (makeDesktopItem {
             name = name;
             desktopName = "Windows XP";
-            exec = name;
+            exec = ''
+              systemctl reboot --boot-loader-entry=auto-windows
+            '';
           })
         ];
         nativeBuildInputs = [copyDesktopItems];
       })
     ];
+
+    security.polkit.extraConfig = ''
+      polkit.addRule(function(action, subject) {
+        if (action.id == "org.freedesktop.login1.set-reboot-to-boot-loader-entry") {
+          return polkit.Result.YES;
+        }
+      });
+    '';
   };
 }
