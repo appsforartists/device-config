@@ -1,16 +1,20 @@
 {
+  lib,
   config,
   pkgs,
-  lib,
+  inputs,
+  system,
   ...
 }: {
   imports = [
+    inputs.jovian.nixosModules.default
     ./hardware-configuration.nix
   ];
 
+  jovian.devices.legiongo.enable = true;
+
   boot = {
     kernelPackages = pkgs.linuxPackages_6_12;
-    initrd.kernelModules = ["amdgpu"];
 
     # zenpower is supposed to be better for reading sensors on a modern AMD APU
     extraModulePackages = with config.boot.kernelPackages; [zenpower];
