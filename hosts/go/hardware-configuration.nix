@@ -28,6 +28,8 @@
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/2534-B86C";
       fsType = "vfat";
+      # silence warning about random seed being writable.
+      options = [ "umask=0077" ];
     };
 
   fileSystems."/home" =
