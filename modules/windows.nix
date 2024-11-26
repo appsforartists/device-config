@@ -21,7 +21,7 @@ in {
             name = name;
             desktopName = "Windows XP";
             exec = ''
-              bootctl set-oneshot auto-windows\; systemctl reboot\;
+              systemctl reboot --boot-loader-entry=auto-windows
             '';
           })
         ];
