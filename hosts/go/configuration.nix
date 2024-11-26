@@ -21,6 +21,9 @@
     # extraModulePackages = with config.boot.kernelPackages; [ lenovo-legion-module ];
 
     loader = {
+      # if we've got no keyboard, no sense in waiting for a screen we can't
+      # interact with
+      timeout = 0;
       systemd-boot = {
         enable = true;
         # "1" fixes the orientation, but the text is unfortunately small.
