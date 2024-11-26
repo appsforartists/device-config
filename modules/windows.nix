@@ -21,7 +21,7 @@ in {
             name = name;
             desktopName = "Windows XP";
             exec = ''
-              systemctl reboot --boot-loader-entry=auto-windows
+              ${pkgs.systemd}/bin/systemctl reboot --boot-loader-entry=auto-windows
             '';
           })
         ];
