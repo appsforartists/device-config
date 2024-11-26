@@ -19,9 +19,9 @@ in {
         desktopItems = [
           (makeDesktopItem {
             name = name;
-            desktopName = "Windows";
+            desktopName = "Windows XP";
             exec = ''
-              efibootmgr -n \$\(efibootmgr \| grep -Pom 1 \"\(\?\<=Boot\)[[:xdigit:]]{4}\(\?=. Windows\)\"\)\; systemctl restart\;
+              bootctl set-oneshot auto-windows\; systemctl reboot\;
             '';
           })
         ];
