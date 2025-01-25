@@ -48,6 +48,7 @@
           }
           mainUserModule
           ./modules/chrome.nix
+          ./modules/dev.nix
           ./modules/gnome.nix
           ./modules/music-games.nix
           ./modules/sd-card.nix
