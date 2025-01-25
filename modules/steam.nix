@@ -30,11 +30,5 @@
         pkgs.proton-ge-bin
       ];
     };
-
-    # if this gets more complex we can put it in its own module; but for now,
-    # it's easier to just reuse the one that has all the other gaming stuff.
-    environment.systemPackages = with pkgs; [
-      clonehero
-    ];
   };
 }

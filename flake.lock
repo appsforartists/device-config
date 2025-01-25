@@ -60,11 +60,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1732228145,
-        "narHash": "sha256-jlApl3wFMCVmpm5Z+rExVOaPsB408Pbey72VXcMDzy4=",
+        "lastModified": 1737847290,
+        "narHash": "sha256-+cFs6tenQwTz4+Z4SSNAqPuuMKM9vZIkABDmMN8IKx0=",
         "ref": "refs/heads/appsforartists",
-        "rev": "aa2d10c92d94d7f07d67039d42f695af4da2aa2a",
-        "revCount": 708925,
+        "rev": "1549bab7868c8cc525a7a53acf8e47233c85650e",
+        "revCount": 708926,
         "type": "git",
         "url": "file:///home/brenton/Projects/nixpkgs"
       },

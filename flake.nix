@@ -49,6 +49,7 @@
           mainUserModule
           ./modules/chrome.nix
           ./modules/gnome.nix
+          ./modules/music-games.nix
           ./modules/sd-card.nix
           ./modules/steam.nix
           ./modules/sublime.nix
