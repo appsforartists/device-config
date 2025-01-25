@@ -29,6 +29,8 @@
       gnome-font-viewer
       gnome-system-monitor
       gnomeExtensions.force-phone-mode
+      gparted
+      ntfs3g # gives gparted the ability to work in ntfs
       nautilus # file manager
     ];
   };
