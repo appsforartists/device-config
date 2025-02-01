@@ -3,8 +3,6 @@
 #
 # Mounting in `hardware-configuration` doesn't work, since `/run/media` is an
 # ephemeral path.
-#
-# udev rules by pongo1231
 
 {
   lib,
@@ -18,26 +16,20 @@ let
 in
 {
   options.sdCard = {
-    btrfsOptions = lib.mkOption {
-      # from https://gitlab.com/popsulfr/steamos-btrfs/
+    ext4Options = lib.mkOption {
       default = [
         "noatime"
-        "lazytime"
-        "compress-force=zstd"
-        "space_cache=v2"
-        "autodefrag"
-        "subvol=@"
-        "ssd_spread"
+        "rw"
       ];
       description = ''
-        The mount options for a btrfs SD card.
+        The mount options for a ext4 SD card.
       '';
     };
   };
 
   config = {
     services.udev.extraRules = ''
-      ACTION=="add", SUBSYSTEM=="block", KERNEL=="mmcblk[0-9]p[0-9]", ENV{ID_FS_USAGE}=="filesystem", RUN{program}+="${ pkgs.systemd }/bin/systemd-mount -o ${ lib.concatStringsSep "," cfg.btrfsOptions } --no-block --automount=yes --collect $devnode /run/media/mmcblk0p1"
+      ACTION=="add", SUBSYSTEM=="block", KERNEL=="mmcblk[0-9]p[0-9]", ENV{ID_FS_USAGE}=="filesystem", RUN{program}+="${ pkgs.systemd }/bin/systemd-mount -o ${ lib.concatStringsSep "," cfg.ext4Options } --no-block --automount=yes --collect $devnode /run/media/mmcblk0p1"
     '';
   };
 }
