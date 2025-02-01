@@ -24,14 +24,6 @@
     # doesn't seem to be useful yet
     # extraModulePackages = with config.boot.kernelPackages; [ lenovo-legion-module ];
 
-    plymouth = {
-      enable = true;
-      theme = "steamos";
-      themePackages = with pkgs; [
-        plymouth-steamos-theme
-      ];
-    };
-
     loader = {
       # if we've got no keyboard, no sense in waiting for a screen we can't
       # interact with
