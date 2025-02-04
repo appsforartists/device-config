@@ -45,6 +45,9 @@
           {
             nix.settings.experimental-features = ["nix-command" "flakes"];
             networking.hostName = "${ goHostname }";
+            nixpkgs.overlays = [
+              (import ./overlays/yarg.nix)
+            ];
           }
           mainUserModule
           ./modules/chrome.nix
