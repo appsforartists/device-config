@@ -23,8 +23,8 @@
       ];
     };
 
-    fileSystems."/home/${config.mainUser.userName}/Yarg" = {
-      device = "/run/media/mmcblk0p1/Yarg";
+    fileSystems."/home/${config.mainUser.userName}/YARG" = {
+      device = "/run/media/mmcblk0p1/YARG";
       fsType = "none";
       options = [
         "bind"
