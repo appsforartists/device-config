@@ -16,5 +16,9 @@
         "noauto"
       ];
     };
+
+    environment.systemPackages = with pkgs; [
+      nurl
+    ];
   };
 }
