@@ -12,8 +12,6 @@
       fsType = "none";
       options = [
         "bind"
-        "x-systemd.automount"
-        "noauto"
       ];
     };
 
