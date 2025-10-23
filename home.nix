@@ -11,7 +11,7 @@
   imports = [
     ./modules/shell.nix
     ./modules/git.nix
-    ./modules/sublime.nix
+    ./modules/sublime
   ];
 
   # This value determines the Home Manager release that your configuration is

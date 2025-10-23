@@ -25,6 +25,16 @@
         inconsolata
         sublime4
       ];
+
+      file = {
+        ".config/sublime-text/Packages/User/Default.sublime-keymap" = {
+          source = ./keybindings.json;
+        };
+
+        ".config/sublime-text/Packages/User/Preferences.sublime-settings" = {
+          source = ./settings.json;
+        };
+      };
     };
 
     programs.bash.bashrcExtra = ''
