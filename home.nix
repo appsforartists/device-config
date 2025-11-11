@@ -11,6 +11,7 @@
   imports = [
     ./modules/shell.nix
     ./modules/git.nix
+    ./modules/tools.nix
     ./modules/sublime
   ];
 
