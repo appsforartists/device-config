@@ -14,6 +14,13 @@
     ./modules/sublime
   ];
 
+  # Gemini says you have to manually set up the paths in single-user mode
+  # (e.g. on SteamOS)
+  systemd.user.sessionVariables = {
+    PATH = "${config.home.homeDirectory}/.nix-profile/bin:''$PATH";
+    XDG_DATA_DIRS = "${config.home.homeDirectory}/.nix-profile/share:''$XDG_DATA_DIRS";
+  };
+
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
