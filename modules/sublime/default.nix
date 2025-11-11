@@ -40,14 +40,5 @@
     programs.bash.bashrcExtra = ''
       export EDITOR="subl -w"
     '';
-
-    xdg.desktopEntries.sublime-text = {
-      name = "Sublime Text";
-      exec = "${pkgs.sublime4}/bin/subl %F";
-      icon = "sublime-text";
-      type = "Application";
-      categories = ["Development" "TextEditor"];
-      mimeType = ["text/plain"];
-    };
   };
 }
