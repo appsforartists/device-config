@@ -15,6 +15,7 @@
     ./modules/ssh.nix
     ./modules/tools.nix
     ./modules/sublime
+    ./modules/balatro
     ./modules/brotato.nix
   ];
 
