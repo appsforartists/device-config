@@ -15,6 +15,7 @@
     ./modules/ssh.nix
     ./modules/tools.nix
     ./modules/sublime
+    ./modules/brotato.nix
   ];
 
   # Gemini says you have to manually set up the paths in single-user mode
