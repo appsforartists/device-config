@@ -1,27 +1,22 @@
-# To use this as a "non-Steam game," set the Launch Options to:
-#
-# env -u LD_PRELOAD -u LD_LIBRARY_PATH %command%
 {
   pkgs,
   lib,
   ...
 }: let
-  nixgl = import (builtins.fetchTarball "https://github.com/nix-community/nixGL/archive/main.tar.gz") {inherit pkgs;};
-
   balatro-overridden = pkgs.balatro.override {
     withMods = false;
     withLinuxPatch = false;
   };
-
-  balatro-patched = balatro-overridden.overrideAttrs (oldAttrs: {
+in
+  balatro-overridden.overrideAttrs (oldAttrs: {
     pname = oldAttrs.pname + "-patched";
     src = /nix/store/xqsnrv314v0vx1dq2v5f8m0sqlv95rz1-Balatro.zip;
 
     nativeBuildInputs = [
-      nixgl.auto.nixGLDefault
       pkgs.love
       pkgs.makeWrapper
       pkgs.p7zip
+      pkgs.copyDesktopItems
     ];
 
     installPhase = ''
@@ -62,26 +57,11 @@
       cat ${lib.getExe pkgs.love} $loveFile > $out/share/Balatro
       chmod +x $out/share/Balatro
 
-      makeWrapper ${lib.getExe nixgl.auto.nixGLDefault} $out/bin/balatro \
-        --add-flags "$out/share/Balatro"
+      makeWrapper $out/share/Balatro $out/bin/balatro
 
       runHook postInstall
     '';
 
     meta = pkgs.balatro.meta;
-  });
-in {
-  home.packages = [
-    balatro-patched
-  ];
-
-  xdg.desktopEntries = {
-    balatro = {
-      name = "Balatro";
-      exec = "balatro";
-      icon = "balatro";
-      comment = pkgs.balatro.meta.description;
-      categories = ["Game"];
-    };
-  };
-}
+    desktopItems = pkgs.balatro.desktopItems;
+  })
