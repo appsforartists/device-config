@@ -38,11 +38,11 @@
         rmdir "$tmpdir/Assets"
       fi
 
-      cp ${./platform_bridge.lua} $tmpdir/platform_bridge.lua
+      cp ${./bridge_detour.lua} $tmpdir/bridge_detour.lua
 
       for file in main.lua engine/load_manager.lua engine/save_manager.lua; do
         if [ -f "$tmpdir/$file" ]; then
-          sed -i '1i require("platform_bridge")' "$tmpdir/$file"
+          sed -i '1i require("bridge_detour")' "$tmpdir/$file"
         else
           echo "Warning: $file not found in extracted source."
         fi

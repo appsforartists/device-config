@@ -232,3 +232,11 @@ print("Linux bridge loaded.")
 -- Make this bridge available to any subsequent `require "love.platform"` calls.
 ----------------------------------------------------------------------
 package.loaded["love.platform"] = love.platform
+
+if love.graphics then
+  if love.graphics.isActive and not love.graphics.checkActive then
+    love.graphics.checkActive = love.graphics.isActive
+  end
+
+  love.graphics.beginFrame = love.graphics.beginFrame or function() end
+end
