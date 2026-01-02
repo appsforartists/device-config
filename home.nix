@@ -10,6 +10,7 @@
   home.homeDirectory = "/home/deck";
 
   imports = [
+    ./modules/nix.nix
     ./modules/shell.nix
     ./modules/git.nix
     ./modules/ssh.nix
