@@ -15,7 +15,7 @@
     ./modules/git.nix
     ./modules/ssh.nix
     ./modules/tools.nix
-    ./modules/rmate
+
     ./modules/sublime
     ./modules/games.nix
   ];

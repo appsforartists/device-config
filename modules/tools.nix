@@ -10,6 +10,7 @@
     home = {
       packages = with pkgs; [
         gemini-cli
+        rmate
       ];
     };
   };
