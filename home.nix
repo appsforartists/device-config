@@ -11,11 +11,10 @@
 
   imports = [
     ./modules/nix.nix
+    ./modules/sshd.nix
     ./modules/shell.nix
     ./modules/git.nix
-    ./modules/ssh.nix
     ./modules/tools.nix
-
     ./modules/sublime
     ./modules/games.nix
   ];
