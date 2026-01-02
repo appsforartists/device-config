@@ -37,18 +37,17 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1767370960,
-        "narHash": "sha256-tfhuZkpzWMh/db2rwy0Ehr+57YMO3chFPkFE/n0/yNM=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "cd49ffafb0e185a0e29cdeacc8aa0391d9a1b669",
-        "type": "github"
+        "lastModified": 1767394213,
+        "narHash": "sha256-AZ5zbU5gbLyw+E0GYkBznizd0G4LJ4qwSHaseoeHB4w=",
+        "ref": "refs/heads/appsforartists",
+        "rev": "66bbf32c588c8d4f57d3510530603799a454bd37",
+        "revCount": 3,
+        "type": "git",
+        "url": "file:///home/deck/Projects/nixpkgs"
       },
       "original": {
-        "owner": "nixos",
-        "ref": "release-25.11",
-        "repo": "nixpkgs",
-        "type": "github"
+        "type": "git",
+        "url": "file:///home/deck/Projects/nixpkgs"
       }
     },
     "root": {
