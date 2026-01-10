@@ -35,6 +35,15 @@
           ./environments/steamos.nix
         ];
       };
+
+      "corp" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        extraSpecialArgs = {inherit inputs secrets;};
+        modules = [
+          secrets.userInfo
+          ./environments/corp.nix
+        ];
+      };
     };
   };
 }
