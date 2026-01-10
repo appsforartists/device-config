@@ -13,8 +13,8 @@
 # This wrapper merges both approaches: it populates an `LD_LIBRARY_PATH` with
 # the driver versions that Nix expects and overrides the one provided by Steam.
 {
-  pkgs,
   lib,
+  pkgs,
 }: {pkg}: let
   binaryName = pkg.meta.mainProgram or pkg.pname;
   driverPath = lib.makeLibraryPath [

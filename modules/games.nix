@@ -1,7 +1,7 @@
 {
-  pkgs,
-  lib,
   config,
+  lib,
+  pkgs,
   ...
 }: let
   makeSteamSafe = import ./makeSteamSafe.nix {inherit pkgs lib;};
