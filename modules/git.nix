@@ -13,11 +13,5 @@
         email = "appsforartists@google.com";
       };
     };
-
-    home = {
-      packages = with pkgs; [
-        alejandra
-      ];
-    };
   };
 }

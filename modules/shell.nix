@@ -11,12 +11,12 @@
 
       # Gemini says you have to manually set up the PATHs when using single-user
       # mode (e.g. on SteamOS).
-      initExtra = ''
+      initExtra = lib.mkIf (!config.my.system.hasDeterminate) ''
         if [ -f "${config.home.homeDirectory}/.nix-profile/etc/profile.d/nix-daemon.sh" ]; then
          . "${config.home.homeDirectory}/.nix-profile/etc/profile.d/nix-daemon.sh"
         fi
       '';
-      profileExtra = ''
+      profileExtra = lib.mkIf (!config.my.system.hasDeterminate) ''
         if [ -f "${config.home.homeDirectory}/.nix-profile/etc/profile.d/nix-daemon.sh" ]; then
          . "${config.home.homeDirectory}/.nix-profile/etc/profile.d/nix-daemon.sh"
         fi
@@ -43,5 +43,17 @@
         sbrc = "subl ~/.bashrc";
       };
     };
+
+    home.packages = [
+      (pkgs.writeShellScriptBin "hms" ''
+        #!/usr/bin/env bash
+        set -euo pipefail
+        exec ${inputs.home-manager.packages.${pkgs.stdenv.hostPlatform.system}.home-manager}/bin/home-manager switch \
+          --flake "$HOME/Projects/device-config#${config.my.system.environment}" \
+          --override-input nixpkgs "git+file://$HOME/Projects/nixpkgs" \
+          --impure \
+          "$@"
+      '')
+    ];
   };
 }

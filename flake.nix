@@ -1,10 +1,14 @@
 {
-  description = "Home Manager configuration";
+  description = "Home Manager configuration for each environment";
 
   inputs = {
-    nixpkgs.url = "git+file:///home/deck/Projects/nixpkgs";
+    nixpkgs = {
+      # @shell's alias `hms` replaces this with the local checkout
+      url = "github:appsforartists/nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -14,12 +18,23 @@
     home-manager,
     ...
   } @ inputs: let
-    system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
+    # Each device has a ./secrets.nix that contains metadata I don't want to
+    # share on GitHub.  Since I keep all my git repos in ~/Projects, the
+    # absolute path to that file can be computed and imported as `secrets` when
+    # `home-manager switch` is run with `--impure` (aliased to `hms` in
+    # @shell.nix).
+    secrets = import ((builtins.getEnv "HOME") + "/Projects/device-config/secrets.nix");
+    pkgs = nixpkgs.legacyPackages.${builtins.currentSystem};
   in {
-    homeConfigurations."deck" = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
-      modules = [./home.nix];
+    homeConfigurations = {
+      "steamos" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        extraSpecialArgs = {inherit inputs secrets;};
+        modules = [
+          secrets.userInfo
+          ./environments/steamos.nix
+        ];
+      };
     };
   };
 }
