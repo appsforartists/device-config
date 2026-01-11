@@ -17,7 +17,15 @@ in
       pkgs.makeWrapper
       pkgs.p7zip
       pkgs.copyDesktopItems
+      pkgs.libicns
+      pkgs.graphicsmagick
     ];
+
+    srcIcon = pkgs.fetchurl {
+      name = "balatro.icns";
+      url = "https://shared.fastly.steamstatic.com/community_assets/images/apps/2379780/26b1742312f73169f21a3827245a9119d32c1a72.icns";
+      hash = "sha256-MrO1faPMLXNFDJWecCoC9/AdEI2ryq/U1Vsmb5Z+1io=";
+    };
 
     installPhase = ''
       runHook preInstall
@@ -48,11 +56,15 @@ in
       7z a -tzip ../$loveFile ./*
       cd ..
 
-      mkdir -p $out/bin $out/share/balatro $out/share/icons/hicolor/256x256/apps
+      cp $srcIcon balatro.icns
+      icns2png -x balatro.icns
+      mkdir -p $out/share/icons/hicolor/32x32/apps
+      install -Dm644 balatro_32x32x32.png $out/share/icons/hicolor/32x32/apps/balatro.png
 
-      if [ -f "$tmpdir/resources/textures/2x/balatro.png" ]; then
-        install -Dm644 $tmpdir/resources/textures/2x/balatro.png $out/share/icons/hicolor/256x256/apps/balatro.png
-      fi
+      # the original icon is pixel art, so integer scale it to avoid interpolation
+      gm convert balatro_32x32x32.png -scale 512x512 balatro_512x512x32.png
+      mkdir -p $out/share/icons/hicolor/512x512/apps
+      install -Dm644 balatro_512x512x32.png $out/share/icons/hicolor/512x512/apps/balatro.png
 
       cat ${lib.getExe pkgs.love} $loveFile > $out/share/Balatro
       chmod +x $out/share/Balatro
