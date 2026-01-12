@@ -12,6 +12,7 @@
 
   imports = [
     ./common.nix
+    ../modules/fonts.nix
     ../modules/terminal.nix
   ];
 }
