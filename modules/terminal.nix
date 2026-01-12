@@ -39,7 +39,7 @@
         yrs = "yarn run start";
         yrbw = "yarn run build --watch";
         yrt = "yarn run test";
-        sbrc = "subl ~/.bashrc";
+        sbdc = "subl ~/Projects/device-config";
       };
     };
 
