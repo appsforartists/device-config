@@ -13,9 +13,9 @@
     ./common.nix
     ../modules/games.nix
     ../modules/git.nix
-    ../modules/shell.nix
     ../modules/sshd.nix
     ../modules/sublime
+    ../modules/terminal.nix
     ../modules/tools.nix
   ];
 }

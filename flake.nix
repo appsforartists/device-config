@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs = {
-      # @shell's alias `hms` replaces this with the local checkout
+      # @terminal's alias `hms` replaces this with the local checkout
       url = "github:appsforartists/nixpkgs";
     };
     home-manager = {
@@ -22,7 +22,7 @@
     # share on GitHub.  Since I keep all my git repos in ~/Projects, the
     # absolute path to that file can be computed and imported as `secrets` when
     # `home-manager switch` is run with `--impure` (aliased to `hms` in
-    # @shell.nix).
+    # @terminal.nix).
     secrets = import ((builtins.getEnv "HOME") + "/Projects/device-config/secrets.nix");
     pkgs = nixpkgs.legacyPackages.${builtins.currentSystem};
   in {
