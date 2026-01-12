@@ -12,5 +12,6 @@
 
   imports = [
     ./common.nix
+    ../modules/terminal.nix
   ];
 }
