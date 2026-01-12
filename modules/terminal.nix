@@ -71,8 +71,13 @@
       };
     };
 
-    home.packages = [
-      (pkgs.writeShellScriptBin "hms" ''
+    programs.starship = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+
+    home.packages = with pkgs; [
+      (writeShellScriptBin "hms" ''
         #!/usr/bin/env bash
         set -euo pipefail
         exec ${inputs.home-manager.packages.${pkgs.stdenv.hostPlatform.system}.home-manager}/bin/home-manager switch \
