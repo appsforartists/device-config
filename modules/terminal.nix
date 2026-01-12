@@ -6,7 +6,7 @@
   ...
 }: {
   config = {
-    programs.bash = {
+    programs.zsh = {
       enable = true;
 
       # Gemini says you have to manually set up the PATHs when using single-user
