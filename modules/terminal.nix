@@ -6,6 +6,35 @@
   ...
 }: {
   config = {
+    programs.ghostty = {
+      enable = true;
+
+      # nixpkgs doesn't have the Mac version building from source yet, and there
+      # may be issues with putting ghostty-bin e.g. in the Dock.  For now, just
+      # using Nix to share settings across devices.
+      package = lib.mkIf (pkgs.stdenv.isDarwin) null;
+
+      settings = {
+        font-family = "Ligconsolata";
+        font-feature = "dlig";
+        font-size = 18;
+
+        adjust-cell-height = "20%";
+        window-padding-x = 8;
+        window-padding-y = 8;
+        window-padding-balance = true;
+
+        foreground = "#28FE14";
+        bold-color = "#00FF00";
+        background = "#000123";
+        background-blur = 50;
+        background-opacity = 0.90;
+
+        # keep the Mac defaults for text nav and special characters on left option
+        macos-option-as-alt = "right";
+      };
+    };
+
     programs.zsh = let
       putNixOnPATH = ''
         if [ -f "${config.home.homeDirectory}/.nix-profile/etc/profile.d/nix-daemon.sh" ]; then
