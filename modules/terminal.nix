@@ -9,11 +9,6 @@
     programs.ghostty = {
       enable = true;
 
-      # nixpkgs doesn't have the Mac version building from source yet, and there
-      # may be issues with putting ghostty-bin e.g. in the Dock.  For now, just
-      # using Nix to share settings across devices.
-      package = lib.mkIf (pkgs.stdenv.isDarwin) null;
-
       settings = {
         font-family = "Ligconsolata";
         font-feature = "dlig";
@@ -41,7 +36,6 @@
          . "${config.home.homeDirectory}/.nix-profile/etc/profile.d/nix-daemon.sh"
         fi
       '';
-
     in {
       enable = true;
 
@@ -84,4 +78,21 @@
       '')
     ];
   };
+
+  # On Mac: just use nix for configuration, not for installing apps
+  imports = [
+    (lib.mkIf pkgs.stdenv.isDarwin {
+      programs = {
+        # Ghostty's derivation builds from source for Linux, but there's only
+        # a binary version (which may not play nicely with e.g. the Dock) for
+        # Mac.
+        ghostty.package = null;
+
+        # You have to manually `sudo chsh -s /bin/zsh $USER` to change shells on
+        # Mac.  The Nix-managed version of zsh isn't in `/etc/shells`, and it's
+        # probably not worth it to force it.
+        zsh.package = pkgs.emptyDirectory; # doesn't support `null`
+      };
+    })
+  ];
 }
