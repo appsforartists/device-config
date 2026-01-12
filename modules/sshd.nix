@@ -65,8 +65,9 @@
     fi
   '';
 in {
-  home.packages = [
-    pkgs.zenity
+  home.packages = with pkgs; [
+    rmate
+    zenity
     toggleScript
   ];
 
