@@ -11,6 +11,7 @@
 
   imports = [
     ./common.nix
+    ../modules/fonts.nix
     ../modules/games.nix
     ../modules/git.nix
     ../modules/sshd.nix
