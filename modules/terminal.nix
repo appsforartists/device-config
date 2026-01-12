@@ -31,18 +31,20 @@
     };
 
     programs.zsh = let
+      localNixDaemon = "${config.home.homeDirectory}/.nix-profile/etc/profile.d/nix-daemon.sh";
+      globalNixDaemon = "/etc/profile.d/nix.sh";
       putNixOnPATH = ''
-        if [ -f "${config.home.homeDirectory}/.nix-profile/etc/profile.d/nix-daemon.sh" ]; then
-         . "${config.home.homeDirectory}/.nix-profile/etc/profile.d/nix-daemon.sh"
+        if [ -f "${localNixDaemon}" ]; then
+         . "${localNixDaemon}"
+        elif [ -f "${globalNixDaemon}" ]; then
+         . "${globalNixDaemon}"
         fi
       '';
     in {
       enable = true;
 
-      # Gemini says you have to manually set up the PATHs when using single-user
-      # mode (e.g. on SteamOS).
-      initExtra = lib.mkIf (!config.my.system.hasDeterminate) putNixOnPATH;
-      profileExtra = lib.mkIf (!config.my.system.hasDeterminate) putNixOnPATH;
+      initContent = putNixOnPATH;
+      profileExtra = putNixOnPATH;
 
       shellAliases = {
         g = "git";
