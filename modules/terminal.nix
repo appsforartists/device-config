@@ -10,7 +10,10 @@
       enable = true;
 
       settings = {
-        font-family = "Ligconsolata";
+        font-family = [
+          "Ligconsolata"
+          "Noto Color Emoji"
+        ];
         font-feature = "dlig";
         font-size = 18;
 
