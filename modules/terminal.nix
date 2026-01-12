@@ -6,21 +6,20 @@
   ...
 }: {
   config = {
-    programs.zsh = {
+    programs.zsh = let
+      putNixOnPATH = ''
+        if [ -f "${config.home.homeDirectory}/.nix-profile/etc/profile.d/nix-daemon.sh" ]; then
+         . "${config.home.homeDirectory}/.nix-profile/etc/profile.d/nix-daemon.sh"
+        fi
+      '';
+
+    in {
       enable = true;
 
       # Gemini says you have to manually set up the PATHs when using single-user
       # mode (e.g. on SteamOS).
-      initExtra = lib.mkIf (!config.my.system.hasDeterminate) ''
-        if [ -f "${config.home.homeDirectory}/.nix-profile/etc/profile.d/nix-daemon.sh" ]; then
-         . "${config.home.homeDirectory}/.nix-profile/etc/profile.d/nix-daemon.sh"
-        fi
-      '';
-      profileExtra = lib.mkIf (!config.my.system.hasDeterminate) ''
-        if [ -f "${config.home.homeDirectory}/.nix-profile/etc/profile.d/nix-daemon.sh" ]; then
-         . "${config.home.homeDirectory}/.nix-profile/etc/profile.d/nix-daemon.sh"
-        fi
-      '';
+      initExtra = lib.mkIf (!config.my.system.hasDeterminate) putNixOnPATH;
+      profileExtra = lib.mkIf (!config.my.system.hasDeterminate) putNixOnPATH;
 
       shellAliases = {
         g = "git";
