@@ -5,8 +5,9 @@
   ...
 }: {
   imports = [
+    ./direnv.nix
     ./ghostty.nix
-    ./zsh.nix
     ./starship.nix
+    ./zsh.nix
   ];
 }
