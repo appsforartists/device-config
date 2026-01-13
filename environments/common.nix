@@ -1,7 +1,9 @@
 {
   imports = [
-    ../modules/options.nix
+    ../modules/fonts.nix
     ../modules/nix.nix
+    ../modules/options.nix
+    ../modules/terminal
   ];
 
   programs.home-manager.enable = true;

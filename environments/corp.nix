@@ -12,8 +12,6 @@
 
   imports = [
     ./common.nix
-    ../modules/fonts.nix
-    ../modules/terminal
   ];
 
   home.sessionVariables = with secrets; {
