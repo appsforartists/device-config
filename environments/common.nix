@@ -2,6 +2,7 @@
   imports = [
     ../modules/fonts.nix
     ../modules/nix.nix
+    ../modules/npm.nix
     ../modules/options.nix
     ../modules/terminal
   ];

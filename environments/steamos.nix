@@ -15,6 +15,5 @@
     ../modules/git.nix
     ../modules/sshd.nix
     ../modules/sublime
-    ../modules/tools.nix
   ];
 }
