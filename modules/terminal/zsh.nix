@@ -54,11 +54,23 @@
       (writeShellScriptBin "hms" ''
         #!/usr/bin/env bash
         set -euo pipefail
+
+        ARGS=()
+        NIXPKGS_OVERRIDE=""
+
+        for arg in "$@"; do
+          if [ "$arg" == "--local" ]; then
+            NIXPKGS_OVERRIDE="--override-input nixpkgs git+file://$HOME/Projects/nixpkgs"
+          else
+            ARGS+=("$arg")
+          fi
+        done
+
         exec ${inputs.home-manager.packages.${pkgs.stdenv.hostPlatform.system}.home-manager}/bin/home-manager switch \
           --flake "$HOME/Projects/device-config#${config.my.system.environment}" \
-          --override-input nixpkgs "git+file://$HOME/Projects/nixpkgs" \
+          $NIXPKGS_OVERRIDE \
           --impure \
-          "$@"
+          "''${ARGS[@]}"
       '')
     ];
   };
