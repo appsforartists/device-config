@@ -1,0 +1,51 @@
+#!/bin/sh
+#
+# Pre-commit hook to run alejandra on staged nix files.
+# Modifies the files in place but does NOT git add them.
+# Fails the commit if changes were made, so the user can review and add.
+
+# Ensure Nix binaries are in the path
+export PATH="$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:$PATH"
+
+# Find all staged files ending in .nix
+files=$(git diff --cached --name-only --diff-filter=ACM | grep '\.nix$')
+
+if [ -z "$files" ]; then
+    exit 0
+fi
+
+if ! command -v alejandra >/dev/null 2>&1; then
+    echo "Warning: alejandra not found. Skipping formatting."
+    exit 0
+fi
+
+echo "Running alejandra on staged files..."
+# Run alejandra in place. It returns non-zero if it formatted something (or failed), 
+# but usually we want to capture if files changed.
+# Actually alejandra returns 0 on success (even if formatted).
+# We need to detect if files changed.
+
+# Simple approach: Run it. If git diff shows changes in those files *after* running, warn user.
+echo "$files" | xargs alejandra --quiet
+
+# Check if any of the staged files now have unstaged changes (meaning alejandra changed them)
+# This isn't perfect (it catches ANY unstaged changes), but for a formatter hook it's a decent proxy.
+# A more robust way is to compare hashes, but simply running it and failing if the file 
+# on disk is different from the index is the safe "don't commit ugly code" approach.
+
+# We just rely on the user. If they run commit, we format.
+# If the format changed something, the file on disk is now different from the index.
+# We should probably fail the commit to alert them "Hey, we formatted this for you, please stage it."
+
+# To detect if we need to fail:
+# We can check `git diff --name-only` for the files we just touched.
+changed_files=$(echo "$files" | xargs git diff --name-only)
+
+if [ -n "$changed_files" ]; then
+    echo ""
+    echo "⚠️  Alejandra formatted the following files:"
+    echo "$changed_files"
+    echo ""
+    echo "The commit was aborted so you can review and stage the formatting changes."
+    exit 1
+fi

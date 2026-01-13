@@ -45,5 +45,21 @@
         ];
       };
     };
+
+    devShells = nixpkgs.lib.genAttrs ["x86_64-linux" "aarch64-darwin" "x86_64-darwin"] (
+      system: let
+        pkgs = nixpkgs.legacyPackages.${system};
+      in {
+        default = pkgs.mkShellNoCC {
+          packages = [pkgs.alejandra];
+          shellHook = ''
+            git_root=$(git rev-parse --show-toplevel)
+            if [ -d "$git_root/.git/hooks" ]; then
+              ln -sf "$git_root/hooks/pre-commit" "$git_root/.git/hooks/pre-commit"
+            fi
+          '';
+        };
+      }
+    );
   };
 }
