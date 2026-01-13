@@ -16,7 +16,7 @@
     ../modules/git.nix
     ../modules/sshd.nix
     ../modules/sublime
-    ../modules/terminal.nix
+    ../modules/terminal
     ../modules/tools.nix
   ];
 }
