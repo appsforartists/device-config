@@ -4,15 +4,22 @@
   lib,
   pkgs,
   ...
-}: {
+}: let
+  makeSteamSafe = import ../makeSteamSafe.nix {inherit lib pkgs;};
+in {
   config = {
     programs.ghostty = {
       enable = true;
 
-      # On Mac, just use Nix for configuration.
-      # Ghostty's derivation builds from source for Linux, but there's only a
-      # binary version (which may not play nicely with e.g. the Dock) for Mac.
-      package = lib.mkIf pkgs.stdenv.isDarwin null;
+      package =
+        if pkgs.stdenv.isLinux
+        then makeSteamSafe {pkg = pkgs.ghostty;}
+        else
+          # On Mac, just use Nix for configuration.
+          # Ghostty's derivation builds from source for Linux, but there's only
+          # a binary version (which may not play nicely with e.g. the Dock) for
+          # Mac.
+          lib.mkIf pkgs.stdenv.isDarwin null;
 
       settings = {
         font-family = [
