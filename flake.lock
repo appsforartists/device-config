@@ -7,27 +7,26 @@
         ]
       },
       "locked": {
-        "lastModified": 1767910483,
-        "narHash": "sha256-MOU5YdVu4DVwuT5ztXgQpPuRRBjSjUGIdUzOQr9iQOY=",
+        "lastModified": 1768410656,
+        "narHash": "sha256-9CfEGvHgQ8KdhBI5x6RVkuvqCCM7KiVxCM1n9e3lVBA=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "82fb7dedaad83e5e279127a38ef410bcfac6d77c",
+        "rev": "85c83f70968516f571015e260fb21c774e586c0b",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
-        "ref": "release-25.11",
         "repo": "home-manager",
         "type": "github"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1767394213,
-        "narHash": "sha256-AZ5zbU5gbLyw+E0GYkBznizd0G4LJ4qwSHaseoeHB4w=",
+        "lastModified": 1768424766,
+        "narHash": "sha256-Uup2MALx+dI0xRXwmlRPPvYEuJF7n/ezWju2G+LVlXE=",
         "owner": "appsforartists",
         "repo": "nixpkgs",
-        "rev": "66bbf32c588c8d4f57d3510530603799a454bd37",
+        "rev": "ca9df64ed273362b025ce79aba61ce2048a1f385",
         "type": "github"
       },
       "original": {
