@@ -35,7 +35,7 @@
       X11Forwarding yes
       AuthorizedKeysFile ${sshDir}/authorized_keys
       Subsystem sftp ${pkgs.openssh}/libexec/sftp-server
-      CONF
+    CONF
     fi
 
     # Generate host keys if missing
