@@ -4,5 +4,6 @@
   ...
 }: {
   my = {
+    byPlatform = import ./byPlatform.nix {inherit lib;};
   };
 }

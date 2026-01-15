@@ -4,18 +4,15 @@
   lib,
   pkgs,
   ...
-}: let
-  isDarwin = lib.strings.hasInfix "darwin" builtins.currentSystem;
-  isLinux = lib.strings.hasInfix "linux" builtins.currentSystem;
-in {
-  config = lib.mkMerge [
-    (lib.mkIf isDarwin {
+}: {
+  config = lib.my.byPlatform {
+    darwin = {
       home.sessionPath = [
         "/Applications/Sublime Text.app/Contents/SharedSupport/bin"
       ];
-    })
+    };
 
-    (lib.mkIf isLinux {
+    linux = {
       nixpkgs.config = {
         allowUnfree = true;
 
@@ -45,12 +42,12 @@ in {
           };
         };
       };
-    })
+    };
 
-    {
+    common = {
       home.sessionVariables = {
         EDITOR = "subl -w";
       };
-    }
-  ];
+    };
+  };
 }
