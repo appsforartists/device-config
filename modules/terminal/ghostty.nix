@@ -4,9 +4,7 @@
   lib,
   pkgs,
   ...
-}: let
-  makeSteamSafe = import ../makeSteamSafe.nix {inherit lib pkgs;};
-in {
+}: {
   config = lib.my.byPlatform {
     darwin = {
       # On Mac, just use Nix for configuration.
@@ -16,7 +14,7 @@ in {
     };
 
     linux = {
-      programs.ghostty.package = makeSteamSafe {pkg = pkgs.ghostty;};
+      programs.ghostty.package = lib.my.makeSteamSafe {pkg = pkgs.ghostty;};
     };
 
     common = {
