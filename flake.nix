@@ -25,10 +25,15 @@
     # @terminal.nix).
     secrets = import ((builtins.getEnv "HOME") + "/Projects/device-config/secrets.nix");
     pkgs = nixpkgs.legacyPackages.${builtins.currentSystem};
+    extendedLib = pkgs.lib.extend (self: super: (import ./lib {
+      lib = self;
+      inherit pkgs;
+    }));
   in {
     homeConfigurations = {
       "steamos" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
+        lib = extendedLib;
         extraSpecialArgs = {inherit inputs secrets;};
         modules = [
           secrets.userInfo
@@ -38,6 +43,7 @@
 
       "corp" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
+        lib = extendedLib;
         extraSpecialArgs = {inherit inputs secrets;};
         modules = [
           secrets.userInfo
