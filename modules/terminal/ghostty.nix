@@ -7,10 +7,11 @@
 }: {
   config = lib.my.byPlatform {
     darwin = {
-      # On Mac, just use Nix for configuration.
       # Ghostty's derivation builds from source for Linux, but there's only a
       # binary version (which may not play nicely with e.g. the Dock) for Mac.
-      programs.ghostty.package = null;
+      # So install terminfo there to make SSH work, and otherwise just use Nix
+      # for configuration.
+      programs.ghostty.package = pkgs.ghostty-bin.terminfo;
     };
 
     linux = {
