@@ -14,6 +14,5 @@
     ../modules/games.nix
     ../modules/git.nix
     ../modules/sshd.nix
-    ../modules/sublime
   ];
 }
