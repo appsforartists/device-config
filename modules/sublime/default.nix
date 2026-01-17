@@ -12,7 +12,7 @@
       ];
     };
 
-    linux = {
+    linux = lib.mkIf (config.my.system.environment != "corp") {
       nixpkgs.config = {
         allowUnfree = true;
 
