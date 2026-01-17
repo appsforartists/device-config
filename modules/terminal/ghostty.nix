@@ -12,10 +12,12 @@
       # So install terminfo there to make SSH work, and otherwise just use Nix
       # for configuration.
       programs.ghostty.package = pkgs.ghostty-bin.terminfo;
+      home.sessionVariables.TERMINFO_DIRS = "${pkgs.ghostty-bin.terminfo}/share/terminfo";
     };
 
     linux = {
       programs.ghostty.package = lib.my.makeSteamSafe {pkg = pkgs.ghostty;};
+      home.sessionVariables.TERMINFO_DIRS = "${pkgs.ghostty.terminfo}/share/terminfo";
     };
 
     common = {
