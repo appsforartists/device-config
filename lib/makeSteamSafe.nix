@@ -53,6 +53,7 @@ in
 
         setenv("LD_LIBRARY_PATH",  "${driverPath}", 1);
         setenv("LIBGL_DRIVERS_PATH",  "${driPath}", 1);
+        setenv("LIBVA_DRIVERS_PATH",  "${driPath}", 1);
         setenv("VK_DRIVER_FILES",  "$VULKAN_JSONS", 1);
         setenv("VK_ICD_FILENAMES", "$VULKAN_JSONS", 1);
 
