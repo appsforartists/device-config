@@ -15,23 +15,27 @@
 {
   lib,
   pkgs,
-}: {pkg}: let
-  binaryName = pkg.meta.mainProgram or pkg.pname;
+}: basePkg:
+lib.makeOverridable (overrideArgs: let
+  targetPkg = basePkg.override overrideArgs;
+  binaryName = targetPkg.meta.mainProgram or targetPkg.pname;
+
   driverPath = lib.makeLibraryPath [
     pkgs.mesa
     pkgs.libglvnd
   ];
   driPath = "${pkgs.mesa}/lib/dri";
 in
-  pkgs.runCommand "${pkg.name}-steam-safe" {
+  pkgs.runCommand "${targetPkg.name}-steam-safe" {
     nativeBuildInputs = [
       pkgs.gcc
       pkgs.glibc.static
       pkgs.xorg.lndir
     ];
-    meta = pkg.meta;
+    meta = targetPkg.meta;
+    passthru = targetPkg.passthru;
   } ''
-    # To override Vulkan drivers from environ, you need to explicitly enumerate
+    # To override Vulkan drivers with environ, you need to explicitly enumerate
     # the Vulkan files.
     VULKAN_JSONS=$(find ${pkgs.mesa}/share/vulkan/icd.d -name "*.json" | tr '\n' ':')
 
@@ -46,46 +50,46 @@ in
     #include <stdio.h>
 
     int main(int argc, char **argv) {
-        // Steam uses this to monkeypatch binaries; however, it's fragile to the
-        // same glibc version mismatch crash as LD_LIBRARY_PATH, so it must be
-        // unset.
-        unsetenv("LD_PRELOAD");
+      // Steam uses this to monkeypatch binaries; however, it's fragile to the
+      // same glibc version mismatch crash as LD_LIBRARY_PATH, so it must be
+      // unset.
+      unsetenv("LD_PRELOAD");
 
-        setenv("LD_LIBRARY_PATH",  "${driverPath}", 1);
-        setenv("LIBGL_DRIVERS_PATH",  "${driPath}", 1);
-        setenv("LIBVA_DRIVERS_PATH",  "${driPath}", 1);
-        setenv("VK_DRIVER_FILES",  "$VULKAN_JSONS", 1);
-        setenv("VK_ICD_FILENAMES", "$VULKAN_JSONS", 1);
+      setenv("LD_LIBRARY_PATH",  "${driverPath}", 1);
+      setenv("LIBGL_DRIVERS_PATH",  "${driPath}", 1);
+      setenv("LIBVA_DRIVERS_PATH",  "${driPath}", 1);
+      setenv("VK_DRIVER_FILES",  "$VULKAN_JSONS", 1);
+      setenv("VK_ICD_FILENAMES", "$VULKAN_JSONS", 1);
 
-        char *target = "${pkg}/bin/${binaryName}";
+      char *target = "${targetPkg}/bin/${binaryName}";
 
-        argv[0] = target;
-        execv(target, argv);
+      argv[0] = target;
+      execv(target, argv);
 
-        perror("Failed to launch game");
-        return 1;
+      perror("Failed to launch ${targetPkg}");
+      return 1;
     }
     EOF
     gcc -static wrapper.c -o $out/bin/${binaryName}
 
-    # passthrough {pkg}'s desktopItems
-    if [ -d "${pkg}/share" ]; then
+    # pass through targetPkg's desktopItems
+    if [ -d "${targetPkg}/share" ]; then
       mkdir -p $out/share
 
-      # populate $out/share with recursive symlinks to upstream {pkg}
-      lndir -silent "${pkg}/share" "$out/share"
+      # populate $out/share with recursive symlinks to upstream targetPkg
+      lndir -silent "${targetPkg}/share" "$out/share"
 
       if [ -d "$out/share/applications" ]; then
         for file in "$out/share/applications/"*.desktop; do
           # replace the symlink with a copy of the original desktopItem
           filename=$(basename "$file")
           rm "$file"
-          cp "${pkg}/share/applications/$filename" "$file"
+          cp "${targetPkg}/share/applications/$filename" "$file"
           chmod +w "$file"
 
           # update the paths to point at the Steam-safe version
-          sed -i "s|${pkg}|$out|g" "$file"
+          sed -i "s|${targetPkg}|$out|g" "$file"
         done
       fi
     fi
-  ''
+  '') {}

@@ -16,7 +16,7 @@
     };
 
     linux = {
-      programs.ghostty.package = lib.my.makeSteamSafe {pkg = pkgs.ghostty;};
+      programs.ghostty.package = lib.my.makeSteamSafe pkgs.ghostty;
       home.sessionVariables.TERMINFO_DIRS = "${pkgs.ghostty.terminfo}/share/terminfo";
     };
 
