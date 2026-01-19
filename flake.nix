@@ -3,11 +3,10 @@
 
   inputs = {
     nixpkgs = {
-      # @terminal's alias `hms` replaces this with the local checkout
       url = "github:appsforartists/nixpkgs";
     };
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:appsforartists/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
