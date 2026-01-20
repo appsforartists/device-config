@@ -28,7 +28,13 @@
       in {
         enable = true;
 
-        initContent = putNixOnPATH;
+        initContent =
+          ''
+            if [ -f ~/.zshrc.local ]; then
+              source ~/.zshrc.local
+            fi
+          ''
+          + putNixOnPATH;
         profileExtra = putNixOnPATH;
 
         shellAliases = {
