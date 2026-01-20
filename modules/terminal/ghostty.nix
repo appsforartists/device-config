@@ -71,6 +71,12 @@
             "super+a=select_all"
             "super+j=scroll_to_selection"
 
+            # Find
+            "super+f=start_search"
+            "super+shift+f=end_search"
+            "super+g=navigate_search:next"
+            "super+shift+g=navigate_search:previous"
+
             # View
             "super+0=reset_font_size"
             "super+equal=increase_font_size:1"
