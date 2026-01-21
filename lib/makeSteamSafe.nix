@@ -79,17 +79,26 @@ in
       # populate $out/share with recursive symlinks to upstream targetPkg
       lndir -silent "${targetPkg}/share" "$out/share"
 
-      if [ -d "$out/share/applications" ]; then
-        for file in "$out/share/applications/"*.desktop; do
-          # replace the symlink with a copy of the original desktopItem
-          filename=$(basename "$file")
-          rm "$file"
-          cp "${targetPkg}/share/applications/$filename" "$file"
-          chmod +w "$file"
+      update_binary_paths() {
+        local parent_path="$1"
+        local pattern="$2"
 
-          # update the paths to point at the Steam-safe version
-          sed -i "s|${targetPkg}|$out|g" "$file"
-        done
-      fi
+        if [ -d "$out/$parent_path" ]; then
+          for file in "$out/$parent_path/"$pattern; do
+            [ -e "$file" ] || continue
+            # replace the symlink with a copy of the original file
+            filename=$(basename "$file")
+            rm "$file"
+            cp "${targetPkg}/$parent_path/$filename" "$file"
+            chmod +w "$file"
+
+            # update the paths to point at the Steam-safe version
+            sed -i "s|${targetPkg}|$out|g" "$file"
+          done
+        fi
+      }
+
+      update_binary_paths "share/applications" "*.desktop"
+      update_binary_paths "share/dbus-1/services" "*.service"
     fi
   '') {}
