@@ -10,7 +10,7 @@
 in
   balatro-overridden.overrideAttrs (oldAttrs: {
     pname = oldAttrs.pname + "-patched";
-    src = /nix/store/xqsnrv314v0vx1dq2v5f8m0sqlv95rz1-Balatro.zip;
+    src = /nix/store/g44bp7ymc7qlkfv5f03b55cgs1wdmkzl-com.playstack.balatro.android.apk;
 
     nativeBuildInputs = [
       pkgs.love
