@@ -93,6 +93,27 @@ love.platform.localWrite = love.filesystem.write
 love.platform.localRemove = love.filesystem.remove
 love.platform.localCreateDirectory = love.filesystem.createDirectory
 
+-- some versions store their settings files in `common/`
+love.filesystem.getInfo = function (filename, ...)
+  local info = love.platform.localGetInfo(filename, ...)
+
+  if not info then
+    info = love.platform.localGetInfo("common/" .. filename, ...)
+  end
+
+  return info
+end
+
+love.filesystem.read = function (filename, ...)
+  local content, size = love.platform.localRead(filename, ...)
+
+  if not content then
+    content, size = love.platform.localRead("common/" .. filename, ...)
+  end
+
+  return content, size
+end
+
 function love.platform.writeSaveGame(profile, filename, data)
   local dir = tostring(profile)
   if not love.platform.localGetInfo(dir) then
@@ -144,6 +165,7 @@ end
 
 function love.platform.loadGameFile(filename)
   local content, size = love.filesystem.read(filename)
+
   if load_game_callback then
     if content then
       load_game_callback(filename, FileOperationStatus.SUCCESS, "", content, nil, nil)
