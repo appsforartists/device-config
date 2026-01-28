@@ -4,6 +4,11 @@ This repo is where I experiment with potentially esoteric device setups.  It was
 
 Now, I'm using it to hold my Nix Home Manager config.  Home Manager lets me install packages on otherwise-immutable SteamOS, as well as ensure that my settings are shared across devices (e.g. between work and home).
 
+> [!NOTE]
+> I'm not a Nix expert.  This repo is being developed in an iterative/experimental fashion with AI-assistance.
+>
+> The commits might be less clean than I'd prefer, but one goal is not to get stuck in a tinker-hole trying to make it perfect.
+
 # Setup
 
 ## Checkout the repos
