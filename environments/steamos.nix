@@ -1,5 +1,6 @@
 {
   config,
+  inputs,
   lib,
   pkgs,
   ...
@@ -10,10 +11,12 @@
   };
 
   imports = [
+    inputs.plasma-manager.homeModules.plasma-manager
     ./common.nix
     ../modules/chrome.nix
     ../modules/games.nix
     ../modules/git.nix
+    ../modules/plasma
     ../modules/sshd.nix
   ];
 
