@@ -22,11 +22,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1768802412,
-        "narHash": "sha256-mrqOblb4KKo1RV7wweKAzAEv9Axq3g8zj1Mc2dN+z/I=",
+        "lastModified": 1769541240,
+        "narHash": "sha256-3AGoAwiPwNzWwKnz50Vo6ILPvcwzsi/7Rq+kZu+dXRk=",
         "owner": "appsforartists",
         "repo": "nixpkgs",
-        "rev": "38099663926c0b692f13108c5dfb4d6243934cc0",
+        "rev": "b8cb21d6a87f07cc39a58c7cf1c21c8f7a045b7c",
         "type": "github"
       },
       "original": {
