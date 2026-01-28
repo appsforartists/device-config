@@ -4,5 +4,7 @@
   pkgs,
   ...
 }: {
-  imports = [];
+  imports = [
+    ./keybindings.nix
+  ];
 }
