@@ -502,7 +502,7 @@ in {
       "next-profile" = "none";
       "next-tab" = formatForConfig plasmaBindings.windowNavigation.nextTab;
       "open-browser" = "none";
-      "open_kcommand_bar" = formatForConfig plasmaBindings.find.commandPalette;
+      "open_kcommand_bar" = formatForConfig plasmaBindings.windowNavigation.openCommandPalette;
       "options_configure" = formatForConfig plasmaBindings.preferences.open;
       "options_configure_keybinding" = "none";
       "options_configure_notifications" = "none";

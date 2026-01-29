@@ -164,10 +164,6 @@
     togglePreserveCase = "super+option+a";
 
     gotoFile = "escape+a";
-    commandPalette = [
-      "escape+s"
-      "super+shift+p"
-    ];
     gotoSymbol = "super+r";
     gotoSymbolInProject = "super+shift+r";
     gotoLine = "super+l";
@@ -191,6 +187,10 @@
     forward = "super+]";
     home = "super+shift+h";
     openMenu = "super+shift+m";
+    openCommandPalette = [
+      "escape+s"
+      "super+shift+p"
+    ];
 
     focusLocation = "super+l";
     focusNextPane = "super+option+down";
