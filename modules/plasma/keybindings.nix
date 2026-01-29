@@ -261,15 +261,15 @@ in {
       };
       "plasmashell" = {
         "activate application launcher" = plasmaBindings.system.search;
-        "activate task manager entry 1" = plasmaBindings.windowNavigation.goToTab1;
-        "activate task manager entry 2" = plasmaBindings.windowNavigation.goToTab2;
-        "activate task manager entry 3" = plasmaBindings.windowNavigation.goToTab3;
-        "activate task manager entry 4" = plasmaBindings.windowNavigation.goToTab4;
-        "activate task manager entry 5" = plasmaBindings.windowNavigation.goToTab5;
-        "activate task manager entry 6" = plasmaBindings.windowNavigation.goToTab6;
-        "activate task manager entry 7" = plasmaBindings.windowNavigation.goToTab7;
-        "activate task manager entry 8" = plasmaBindings.windowNavigation.goToTab8;
-        "activate task manager entry 9" = plasmaBindings.windowNavigation.goToTab9;
+        "activate task manager entry 1" = [];
+        "activate task manager entry 2" = [];
+        "activate task manager entry 3" = [];
+        "activate task manager entry 4" = [];
+        "activate task manager entry 5" = [];
+        "activate task manager entry 6" = [];
+        "activate task manager entry 7" = [];
+        "activate task manager entry 8" = [];
+        "activate task manager entry 9" = [];
         "activate task manager entry 10" = [];
         "activate widget 58" = [];
         "activate widget 68" = [];
