@@ -31,6 +31,7 @@
     hideApp = "super+option+m";
     nextWindowOfApp = "super+`";
     previousWindowOfApp = "super+shift+`";
+    closeAllAppWindows = "super+option+shift+w";
     showAllWindows = "ctrl+up";
     showAppWindows = "ctrl+down";
     showDesktop = "f11";
@@ -377,8 +378,8 @@
     scrollPageDown = "super+page_down";
     scrollLinesUp = "ctrl+option+up";
     scrollLinesDown = "ctrl+option+down";
-    jumpToPromptUp = "super+up";
-    jumpToPromptDown = "super+down";
+    jumpToPromptUp = "super+shift+up";
+    jumpToPromptDown = "super+shift+down";
 
     inspectorToggle = "super+option+i";
     newSplitRight = "super+d";
