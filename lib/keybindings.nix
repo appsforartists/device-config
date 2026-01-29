@@ -12,6 +12,7 @@
     toggleDock = "super+option+d";
     screenshot = "super+shift+3";
     selectiveScreenshot = "super+shift+4";
+    openScreenshotTool = "super+shift+5";
     lockScreen = "ctrl+super+q";
     logOut = "super+shift+q";
     logOutWithoutConfirmation = "super+option+shift+q";
@@ -76,8 +77,10 @@
     eject = "super+e";
     find = "super+f";
     gotoFolder = "super+shift+g";
+    copyPath = "super+option+c";
     openTerminalHere = "ctrl+shift+o";
     getInfo = "super+i";
+    showHiddenFiles = "super+shift+.";
     showViewOptions = "super+j";
     connectToServer = "super+k";
     makeAlias = "super+ctrl+a";
@@ -86,7 +89,8 @@
     moveClipboardHere = "super+option+v";
     quickLook = "space";
     quickLookSlideshow = "super+option+y";
-    throwAway = "super+delete";
+    throwAway = "super+backspace";
+    deleteImmediately = "super+option+backspace";
     emptyTrash = "super+shift+delete";
     emptyTrashSecurely = "super+option+shift+delete";
     openHome = "super+shift+h";
@@ -111,6 +115,7 @@
     paste = "super+v";
     pasteSpecial = "super+shift+v";
     selectAll = "super+a";
+    selectInverse = "super+option+a";
     toggleComment = "super+/";
     indent = "super+]";
     unindent = "super+[";
@@ -180,6 +185,7 @@
 
     nextTab = "super+shift+]";
     previousTab = "super+shift+[";
+    findTab = "super+shift+a";
 
     back = "super+[";
     forward = "super+]";
@@ -236,11 +242,10 @@
     toggleToolbar = "super+option+t";
     toggleInspector = "super+option+i";
     toggleFullScreen = "super+ctrl+f";
-    increaseFontSize = "super+shift+equal";
-    decreaseFontSize = "super+minus";
-    resetFontSize = "super+0";
+    zoomIn = "super+equal";
+    zoomOut = "super+minus";
+    resetZoom = "super+0";
     clearScreen = "super+k";
-    showHiddenFiles = "super+shift+.";
   };
 
   bookmarks = {
@@ -376,7 +381,6 @@
     jumpToPromptDown = "super+down";
 
     inspectorToggle = "super+option+i";
-    lastTab = "super+9";
     newSplitRight = "super+d";
     newSplitDown = "super+shift+d";
     toggleSplitZoom = "super+shift+enter";
