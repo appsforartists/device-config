@@ -1,4 +1,9 @@
-{lib, ...}: let
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
   plasmaKeyNames = {
     super = "Meta";
     option = "Alt";

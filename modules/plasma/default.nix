@@ -6,5 +6,6 @@
 }: {
   imports = [
     ./keybindings.nix
+    ./panel.nix
   ];
 }
