@@ -4,6 +4,8 @@
   pkgs,
   ...
 }: let
+  iconSize = "40"; # must be a string because it's used in paths below
+
   widgetPackages = {
     andromeda-launcher = pkgs.stdenv.mkDerivation rec {
       pname = "andromeda-launcher";
@@ -94,7 +96,7 @@
       name = widgetPackages.andromeda-launcher.passthru.widgetID;
       config = {
         General = {
-          customButtonImage = "show-grid";
+          customButtonImage = config.misc.material-icons.absolutePath "launcher.svg";
           floating = "true";
           launcherPosition = "2";
           showItemsInGrid = "true";
@@ -104,6 +106,19 @@
     };
   };
 in {
+  misc.material-icons = {
+    enable = true;
+    groups = {
+      "panel-icons" = {
+        color = "white";
+        icons = {
+          "launcher.svg" = "symbols/web/action_key/materialsymbolssharp/action_key_fill1_${iconSize}px.svg";
+        };
+      };
+    };
+    hash = "sha256-uDJQ0UUBcEqfTri5qHzwUP0fXFIU1mzDAEm5OBtU/pc=";
+  };
+
   home.packages = with widgetPackages; [
     pkgs.jost
     andromeda-launcher

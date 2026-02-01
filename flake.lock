@@ -40,11 +40,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1768800980,
-        "narHash": "sha256-pwqj9fG6gqtBhtlirs3z4bIpYTyL6A+15nVZdRbwcSo=",
+        "lastModified": 1769912148,
+        "narHash": "sha256-DMhY50q5WNhG/b/IR1dKaoR+EbFXKusCVUsw2CMDXbU=",
         "owner": "appsforartists",
         "repo": "home-manager",
-        "rev": "2aea9f4118c7f3960a9fcc51530bd724f08debb3",
+        "rev": "02618e5d26a7fa0efa4d59571a6ad2919b82a981",
         "type": "github"
       },
       "original": {
