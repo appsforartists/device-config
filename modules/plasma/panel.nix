@@ -57,6 +57,7 @@
           "applications:com.mitchellh.ghostty.desktop"
           "preferred://filemanager"
           "applications:steam.desktop"
+          "applications:systemsettings.desktop"
         ];
         appearance = {
           showTooltips = true;
@@ -113,10 +114,24 @@ in {
         color = "white";
         icons = {
           "launcher.svg" = "symbols/web/action_key/materialsymbolssharp/action_key_fill1_${iconSize}px.svg";
+          "settings.svg" = "symbols/web/settings/materialsymbolssharp/settings_fill1_${iconSize}px.svg";
         };
       };
     };
-    hash = "sha256-uDJQ0UUBcEqfTri5qHzwUP0fXFIU1mzDAEm5OBtU/pc=";
+    hash = "sha256-wm2iomOeKwWL8jOldGRb+Qi+shTVrTutKxW0RFGcQJg=";
+  };
+
+  programs.plasma.dataFile."applications/systemsettings.desktop" = {
+    "Desktop Entry" = {
+      Type = "Application";
+      Name = "System Settings";
+      Exec = "systemsettings";
+      Icon = config.misc.material-icons.absolutePath "settings.svg";
+      StartupWMClass = "systemsettings";
+      Categories = "Qt;KDE;Settings;";
+      GenericName = "System Settings";
+      Comment = "Configuration tools for your computer";
+    };
   };
 
   home.packages = with widgetPackages; [
