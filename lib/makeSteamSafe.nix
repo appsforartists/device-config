@@ -36,7 +36,7 @@ in
       pkgs.xorg.lndir
     ];
     meta = targetPkg.meta;
-    passthru = targetPkg.passthru;
+    passthru = targetPkg.passthru or {};
   } ''
     # To override Vulkan drivers with environ, you need to explicitly enumerate
     # the Vulkan files.
