@@ -3,11 +3,13 @@
   lib,
   pkgs,
   ...
-}: let
-  balatro = import ./balatro/default.nix {inherit pkgs lib;};
-in {
+}: {
   home.packages = [
     (lib.my.makeSteamSafe pkgs.brotato)
-    (lib.my.makeSteamSafe balatro)
+    (lib.my.makeSteamSafe (
+      pkgs.balatro.override {
+        src = /nix/store/g44bp7ymc7qlkfv5f03b55cgs1wdmkzl-com.playstack.balatro.android.apk;
+      }
+    ))
   ];
 }
