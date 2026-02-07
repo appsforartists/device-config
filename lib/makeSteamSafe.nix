@@ -17,7 +17,10 @@
   pkgs,
 }: basePkg:
 lib.makeOverridable (overrideArgs: let
-  targetPkg = basePkg.override overrideArgs;
+  targetPkg =
+    if (basePkg ? override)
+    then basePkg.override overrideArgs
+    else basePkg;
   binaryName = targetPkg.meta.mainProgram or targetPkg.pname;
 
   driverPath = lib.makeLibraryPath [
