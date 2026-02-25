@@ -18,6 +18,23 @@
     linux = {
       programs.ghostty.package = lib.my.makeSteamSafe pkgs.ghostty;
       home.sessionVariables.TERMINFO_DIRS = "${pkgs.ghostty.terminfo}/share/terminfo";
+
+      xdg.desktopEntries."com.mitchellh.ghostty" = {
+        name = "Ghostty";
+        exec = "${config.programs.zsh.package}/bin/zsh -lc ghostty";
+        icon = "com.mitchellh.ghostty";
+
+        settings = {
+          StartupWMClass = "com.mitchellh.ghostty";
+        };
+
+        actions = {
+          new-window = {
+            name = "New window";
+            exec = "${config.programs.zsh.package}/bin/zsh -lc ghostty --gtk-single-instance=true";
+          };
+        };
+      };
     };
 
     common = let
