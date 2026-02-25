@@ -1,0 +1,86 @@
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
+  steamos-headers = pkgs.stdenv.mkDerivation {
+    pname = "steamos-headers";
+    version = "6.16.12-valve2-4brenton";
+
+    # # Setup:
+    # sudo pacman -U linux-neptune-616-headers-6.16.12.valve2.4brenton-1-x86_64.pkg.tar.zst \
+    #                linux-neptune-616-6.16.12.valve2.4brenton-1-x86_64.pkg.tar.zst
+    # sudo grub-mkconfig -o /efi/EFI/steamos/grub.cfg
+
+    src = pkgs.fetchurl {
+      url = "https://steamdeck-packages.steamos.cloud/misc/test-kernels/linux-neptune-616-headers-6.16.12.valve2.4brenton-1-x86_64.pkg.tar.zst";
+      hash = "sha256-AYkZMMNL39mgxgM3Hnrq0klY1FHwCKpBzdf+E6MeGEg=";
+    };
+
+    nativeBuildInputs = with pkgs; [
+      zstd
+      autoPatchelfHook
+    ];
+
+    buildInputs = with pkgs; [
+      zlib
+      stdenv.cc.cc.lib
+      elfutils
+      openssl
+    ];
+
+    unpackPhase = "tar --use-compress-program=zstd -xf $src";
+
+    dontConfigure = true;
+    dontBuild = true;
+
+    installPhase = ''
+      mkdir -p $out
+      cp -r usr/lib/modules/*/build/* $out/
+    '';
+  };
+
+  hid-sony = pkgs.stdenv.mkDerivation {
+    pname = "hid-sony";
+    version = "rb2-instruments";
+
+    nativeBuildInputs = [pkgs.pahole];
+
+    src = pkgs.fetchFromGitHub {
+      "owner" = "Rosalie241";
+      "repo" = "hid-sony";
+      "rev" = "c2ee908bfd98439c52b0f6a53b771ae4d0ef3455";
+      "hash" = "sha256-6iZmbA3fmcaNo6FwAHqpVE1O3oAMxeRSN/eAGs65wjE=";
+    };
+
+    buildPhase = "make -C ${steamos-headers} M=$(pwd) modules";
+
+    installPhase = ''
+      mkdir -p $out
+      cp hid-sony.ko $out/
+    '';
+  };
+in {
+  systemd.user.services.rock-band-instruments = {
+    # # Setup:
+    # echo "blacklist hid_sony" | sudo tee /etc/modprobe.d/blacklist-hid-sony.conf
+    # echo "deck ALL=(root) NOPASSWD: /usr/bin/insmod, /usr/bin/rmmod" | sudo tee /etc/sudoers.d/zz-kmod
+    # sudo chmod 0440 /etc/sudoers.d/zz-kmod
+
+    Service = {
+      ExecStart = "/usr/bin/sudo /usr/bin/insmod ${hid-sony}/hid-sony.ko";
+      ExecStop = "-/usr/bin/sudo /usr/bin/rmmod hid_sony";
+      Type = "oneshot";
+      RemainAfterExit = true;
+    };
+
+    Unit = {
+      After = ["default.target"];
+    };
+
+    Install = {
+      WantedBy = ["default.target"];
+    };
+  };
+}
