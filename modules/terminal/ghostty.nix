@@ -79,7 +79,7 @@
 
           foreground = "#28FE14";
           bold-color = "#00FF00";
-          background = "#000123";
+          background = "#000123"; # Overridden by lib.my.terminalBackgroundColor in zsh.nix
           background-blur = 50;
           background-opacity = 0.90;
 

@@ -28,13 +28,18 @@
       in {
         enable = true;
 
-        initContent =
-          ''
-            if [ -f ~/.zshrc.local ]; then
-              source ~/.zshrc.local
-            fi
-          ''
-          + putNixOnPATH;
+        initContent = ''
+          if [ -f ~/.zshrc.local ]; then
+            source ~/.zshrc.local
+          fi
+
+          ${putNixOnPATH}
+
+          ${lib.optionalString (config.my.system.terminalBackgroundColor != null) ''
+            printf "\033]11;${config.my.system.terminalBackgroundColor}\a"
+          ''}
+        '';
+
         profileExtra = putNixOnPATH;
 
         shellAliases = {
