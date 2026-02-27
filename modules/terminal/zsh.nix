@@ -25,6 +25,11 @@
            . "${globalNixDaemon}"
           fi
         '';
+
+        colorSequence =
+          if config.my.system.terminalBackgroundColor != null
+          then "11;${config.my.system.terminalBackgroundColor}"
+          else "111"; # reset to default
       in {
         enable = true;
 
@@ -35,9 +40,11 @@
 
           ${putNixOnPATH}
 
-          ${lib.optionalString (config.my.system.terminalBackgroundColor != null) ''
-            printf "\033]11;${config.my.system.terminalBackgroundColor}\a"
-          ''}
+          autoload -Uz add-zsh-hook
+          _set_terminal_color() {
+            printf "\033]${colorSequence}\a"
+          }
+          add-zsh-hook precmd _set_terminal_color
         '';
 
         profileExtra = putNixOnPATH;
