@@ -25,11 +25,6 @@
            . "${globalNixDaemon}"
           fi
         '';
-
-        colorSequence =
-          if config.my.system.terminalBackgroundColor != null
-          then "11;${config.my.system.terminalBackgroundColor}"
-          else "111"; # reset to default
       in {
         enable = true;
 
@@ -42,7 +37,8 @@
 
           autoload -Uz add-zsh-hook
           _set_terminal_color() {
-            printf "\033]${colorSequence}\a"
+            printf "\033]11;${config.my.system.terminalBackgroundColor}\a"
+            printf "\033]10;${config.my.system.terminalForegroundColor}\a"
           }
           add-zsh-hook precmd _set_terminal_color
         '';
