@@ -271,7 +271,6 @@
     softUndo = "super+u";
     softRedo = "super+shift+u";
     pasteFromHistory = "super+option+v";
-    splitSelectionIntoLines = "super+shift+l";
     expandSelectionToLine = "super+shift+l";
     expandSelectionToScope = "super+shift+space";
     expandSelectionToBrackets = "ctrl+shift+m";
