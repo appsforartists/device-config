@@ -16,7 +16,6 @@
     ../modules/chrome.nix
     ../modules/games.nix
     ../modules/git.nix
-    ../modules/instruments
     ../modules/plasma
     ../modules/sshd.nix
   ];
