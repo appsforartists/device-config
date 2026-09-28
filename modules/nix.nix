@@ -7,10 +7,7 @@
 }: {
   config = lib.my.byPlatform {
     linux = {
-      systemd.user.sessionVariables = {
-        PATH = "${config.home.homeDirectory}/.nix-profile/bin:''$PATH";
-        XDG_DATA_DIRS = "${config.home.homeDirectory}/.nix-profile/share:''$XDG_DATA_DIRS";
-      };
+      targets.genericLinux.enable = true;
 
       # Ensures new desktop items appear after `hms` is run
       home.packages = with pkgs; [desktop-file-utils];
