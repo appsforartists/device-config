@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="800" viewBox="0 0 72 800">
+  <g id="shadow-left">
+    <rect x="0" y="0" width="16" height="800" fill="#000000" fill-opacity="0.001"/>
+    <path id="shadow-topleft" d="M 0,0 L 16,0 L 16,16 A 16,16 0 0,0 0,0 Z" fill="#000000"/>
+    <path id="shadow-bottomleft" d="M 16,784 L 16,800 L 0,800 A 16,16 0 0,0 16,784 Z" fill="#000000"/>
+  </g>
+
+  <rect id="topleft" x="16" y="0" width="6" height="6" fill="#000000"/>
+  <rect id="top" x="22" y="0" width="44" height="6" fill="#000000"/>
+  <rect id="topright" x="66" y="0" width="6" height="6" fill="#000000"/>
+  <rect id="left" x="16" y="6" width="6" height="788" fill="#000000"/>
+  <rect id="center" x="22" y="6" width="44" height="788" fill="#000000"/>
+  <rect id="right" x="66" y="6" width="6" height="788" fill="#000000"/>
+  <rect id="bottomleft" x="16" y="794" width="6" height="6" fill="#000000"/>
+  <rect id="bottom" x="22" y="794" width="44" height="6" fill="#000000"/>
+  <rect id="bottomright" x="66" y="794" width="6" height="6" fill="#000000"/>
+
+  <rect id="hint-tile-center" x="22" y="6" width="5" height="5" fill="#000000"/>
+  <rect id="hint-top-margin" x="42" y="0" width="4" height="4" fill="#000000"/>
+  <rect id="hint-bottom-margin" x="42" y="796" width="4" height="4" fill="#000000"/>
+  <rect id="hint-left-margin" x="16" y="398" width="4" height="4" fill="#000000"/>
+  <rect id="hint-right-margin" x="68" y="398" width="4" height="4" fill="#000000"/>
+
+  <rect id="thick-center" x="22" y="6" width="32" height="32" fill="#000000"/>
+  <rect id="thick-hint-top-margin" x="42" y="0" width="4" height="8" fill="#000000"/>
+  <rect id="thick-hint-bottom-margin" x="42" y="792" width="4" height="8" fill="#000000"/>
+  <rect id="thick-hint-left-margin" x="16" y="398" width="8" height="4" fill="#000000"/>
+  <rect id="thick-hint-right-margin" x="64" y="398" width="8" height="4" fill="#000000"/>
+
+  <rect id="shadow-center" x="22" y="6" width="32" height="32" fill="#000000" fill-opacity="0"/>
+  <rect id="shadow-hint-left-margin" x="0" y="399" width="16" height="2" fill="#000000" fill-opacity="0"/>
+</svg>

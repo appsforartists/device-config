@@ -140,22 +140,21 @@ in {
     html-clock
   ];
 
+  xdg.dataFile = {
+    "plasma/desktoptheme/default/widgets/panel-background.svgz".source = ./panel-background.svg;
+    "plasma/desktoptheme/default/solid/widgets/panel-background.svgz".source = ./panel-background.svg;
+    "plasma/desktoptheme/default/translucent/widgets/panel-background.svgz".source = ./panel-background.svg;
+  };
+
+  home.activation.clearPlasmaThemeCache = lib.hm.dag.entryAfter ["linkGeneration"] ''
+    rm -f ~/.cache/plasma_theme_*.kcache ~/.cache/ksvg-elements
+  '';
+
   programs.plasma.panels = with widgets; [
     {
       location = "right";
       height = 56;
       widgets = with widgets; [
-        {
-          plasmaPanelColorizer = {
-            general.enable = true;
-            panelBackground.customBackground = {
-              enable = true;
-              colorSource = "custom";
-              customColor = "#000000";
-              opacity = 1.0;
-            };
-          };
-        }
         battery
         clock
         apps
